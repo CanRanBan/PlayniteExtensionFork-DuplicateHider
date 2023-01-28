@@ -229,7 +229,7 @@
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent></PostBuildEvent>
-  </PropertyGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)' == 'Release'">
+    <Exec Command="%22$(PLAYNITE_SLN)Tools\Playnite.Toolbox\bin\x86\$(Configuration)\Toolbox.exe%22 pack %22$(TargetDir.TrimEnd('\'))%22 %22$(Playnite_Toolbox_TargetDir)%22" />
+  </Target>
 </Project>
