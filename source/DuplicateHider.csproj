@@ -182,46 +182,46 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\amazon.ico" />
+    <Resource Include="Icons\Amazon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\battle.net.ico" />
+    <Resource Include="Icons\Battle.net.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\bethesda.ico" />
+    <Resource Include="Icons\Bethesda.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\epic.ico" />
+    <Resource Include="Icons\Epic.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\gog.ico" />
+    <Resource Include="Icons\GOG.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\humble.ico" />
+    <Resource Include="Icons\Humble.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\itchio.ico" />
+    <Resource Include="Icons\itch.io.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\origin.ico" />
+    <Resource Include="Icons\Origin.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\steam.ico" />
+    <Resource Include="Icons\Playnite.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\ubisoft connect.ico" />
+    <Resource Include="Icons\PSN.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\xbox.ico" />
+    <Resource Include="Icons\Steam.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\psn.ico" />
+    <Resource Include="Icons\Twitch.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\twitch.ico" />
+    <Resource Include="Icons\Ubisoft Connect.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\playnite.ico" />
+    <Resource Include="Icons\Xbox.ico" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="gong-wpf-dragdrop">
