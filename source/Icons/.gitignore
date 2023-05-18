@@ -1,0 +1,5 @@
+### Project specific ignores
+## See .gitignore of main branch
+
+# Icons not included in project archive - see README.md for source
+*.ico
