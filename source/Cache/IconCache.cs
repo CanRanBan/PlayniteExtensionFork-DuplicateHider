@@ -58,7 +58,7 @@ namespace DuplicateHider.Cache
         {
             foreach(var source in api.Database.Sources)
             {
-                
+
             }
         }
 
@@ -81,21 +81,21 @@ namespace DuplicateHider.Cache
 
         private static readonly Dictionary<Playnite.SDK.BuiltinExtension, string> builtinToName = new Dictionary<Playnite.SDK.BuiltinExtension, string>()
         {
-            {Playnite.SDK.BuiltinExtension.AmazonGamesLibrary, "amazon"          },
-            {Playnite.SDK.BuiltinExtension.BattleNetLibrary,   "battle.net"      },
-            {Playnite.SDK.BuiltinExtension.BethesdaLibrary,    "bethesda"        },
-            {Playnite.SDK.BuiltinExtension.EpicLibrary,        "epic"            },
-            {Playnite.SDK.BuiltinExtension.GogLibrary,         "gog"             },
-            {Playnite.SDK.BuiltinExtension.HumbleLibrary,      "humble"          },
-            {Playnite.SDK.BuiltinExtension.ItchioLibrary,      "itchio"          },
-            {Playnite.SDK.BuiltinExtension.OriginLibrary,      "origin"          },
-            {Playnite.SDK.BuiltinExtension.PSNLibrary,         "psn"             },
-            {Playnite.SDK.BuiltinExtension.SteamLibrary,       "steam"           },
-            {Playnite.SDK.BuiltinExtension.TwitchLibrary,      "twitch"          },
-            {Playnite.SDK.BuiltinExtension.UplayLibrary,       "ubisoft connect" },
-            {Playnite.SDK.BuiltinExtension.XboxLibrary,        "xbox"            },
+            {Playnite.SDK.BuiltinExtension.AmazonGamesLibrary, "Amazon"          },
+            {Playnite.SDK.BuiltinExtension.BattleNetLibrary,   "Battle.net"      },
+            {Playnite.SDK.BuiltinExtension.BethesdaLibrary,    "Bethesda"        },
+            {Playnite.SDK.BuiltinExtension.EpicLibrary,        "Epic"            },
+            {Playnite.SDK.BuiltinExtension.GogLibrary,         "GOG"             },
+            {Playnite.SDK.BuiltinExtension.HumbleLibrary,      "Humble"          },
+            {Playnite.SDK.BuiltinExtension.ItchioLibrary,      "itch.io"         },
+            {Playnite.SDK.BuiltinExtension.OriginLibrary,      "Origin"          },
+            {Playnite.SDK.BuiltinExtension.PSNLibrary,         "PSN"             },
+            {Playnite.SDK.BuiltinExtension.SteamLibrary,       "Steam"           },
+            {Playnite.SDK.BuiltinExtension.TwitchLibrary,      "Twitch"          },
+            {Playnite.SDK.BuiltinExtension.UplayLibrary,       "Ubisoft Connect" },
+            {Playnite.SDK.BuiltinExtension.XboxLibrary,        "Xbox"            },
         };
-        
+
 
         internal static string GetResourceIconUri(Game game)
         {
@@ -239,7 +239,7 @@ namespace DuplicateHider.Cache
             paths.Add(resourceIconPath);
             if (!preferUserIcons) paths.Add(userIconPath);
 
-            paths.Add("pack://application:,,,/DuplicateHider;component/icons/playnite.ico");
+            paths.Add("pack://application:,,,/DuplicateHider;component/Icons/Playnite.ico");
 
             return paths.Where(p => !string.IsNullOrEmpty(p) && Uri.TryCreate(p, UriKind.RelativeOrAbsolute, out var _));
         }
