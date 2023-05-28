@@ -91,6 +91,7 @@
     <Compile Include="Data\CustomGroup.cs" />
     <Compile Include="Models\CopyFieldsModel.cs" />
     <Compile Include="Models\CustomGroupViewModel.cs" />
+    <Compile Include="Models\DuplicateEntry.cs" />
     <Compile Include="Models\EnabledFieldsModel.cs" />
     <Compile Include="Models\LibraryStatisticsModel.cs" />
     <Compile Include="Models\ListData.cs" />
