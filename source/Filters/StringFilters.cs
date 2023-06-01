@@ -130,11 +130,13 @@ namespace DuplicateHider
 
         public override string ApplySingle(in string input)
         {
-            return numberRegex.Replace(input, match => {
+            return numberRegex.Replace(input, match =>
+            {
                 if (int.TryParse(match.Value, out var number))
                 {
                     return ToRoman(number);
-                } else
+                }
+                else
                 {
                     return match.Value;
                 }

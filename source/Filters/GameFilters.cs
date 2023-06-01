@@ -109,7 +109,7 @@ namespace DuplicateHider
     {
         public NameNullFilter()
         {
-            
+
         }
 
         public override IEnumerable<Game> ApplySingle(in IEnumerable<Game> input)

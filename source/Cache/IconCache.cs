@@ -6,10 +6,6 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -43,7 +39,8 @@ namespace DuplicateHider.Cache
                     image.EndInit();
                     image.Freeze();
                     return image;
-                } catch (Exception) {}
+                }
+                catch (Exception) { }
             }
 
             return default(BitmapImage);
@@ -56,7 +53,7 @@ namespace DuplicateHider.Cache
 
         public void LoadIcons(IPlayniteAPI api)
         {
-            foreach(var source in api.Database.Sources)
+            foreach (var source in api.Database.Sources)
             {
 
             }
@@ -71,7 +68,8 @@ namespace DuplicateHider.Cache
             if (cache.TryGetValue(key, out var icon))
             {
                 return icon;
-            } else
+            }
+            else
             {
                 var newIcon = generate(game);
                 cache[key] = newIcon;

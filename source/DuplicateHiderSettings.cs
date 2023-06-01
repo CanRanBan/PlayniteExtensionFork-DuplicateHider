@@ -74,7 +74,7 @@ namespace DuplicateHider
 
         public ObservableCollection<PriorityProperty> PriorityProperties { get; set; } = null;
 
-        public List<CustomGroup> CustomGroups {get; set;} = new List<CustomGroup>();
+        public List<CustomGroup> CustomGroups { get; set; } = new List<CustomGroup>();
 
         [JsonIgnore]
         public ICommand AddPriorityPropertyCommand { get; private set; }
@@ -109,7 +109,8 @@ namespace DuplicateHider
                 if (plugin != null && hiddenTagId == Guid.Empty)
                 {
                     hiddenTagId = plugin.PlayniteApi.Database.Tags.Add("[DH] Hidden").Id;
-                } else if (plugin != null && plugin.PlayniteApi.Database.Tags.Get(hiddenTagId) == null)
+                }
+                else if (plugin != null && plugin.PlayniteApi.Database.Tags.Get(hiddenTagId) == null)
                 {
                     hiddenTagId = plugin.PlayniteApi.Database.Tags.Add("[DH] Hidden").Id;
                 }
@@ -185,7 +186,7 @@ namespace DuplicateHider
             left.Text = string.Empty;
             if (filter is ReplaceFilter rf)
             {
-                left.Text = filter.asRegex? filter.regex.ToString() : Regex.Unescape(filter.regex.ToString());
+                left.Text = filter.asRegex ? filter.regex.ToString() : Regex.Unescape(filter.regex.ToString());
             }
             var right = new TextBox
             {
@@ -257,7 +258,7 @@ namespace DuplicateHider
             {
                 return null;
             }
-            if (item.Content is StackPanel sp )
+            if (item.Content is StackPanel sp)
             {
                 var isRegex = false;
                 if (sp.Children.OfType<CheckBox>().FirstOrDefault() is CheckBox cb)
@@ -272,7 +273,8 @@ namespace DuplicateHider
                     if (isRegex)
                     {
                         return new ReplaceFilter(right.Text, new Regex(left.Text, RegexOptions.IgnoreCase)) { asRegex = true };
-                    } else
+                    }
+                    else
                     {
                         return new ReplaceFilter(right.Text, new Regex(Regex.Escape(left.Text), RegexOptions.IgnoreCase));
                     }

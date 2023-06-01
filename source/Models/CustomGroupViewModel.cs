@@ -1,11 +1,8 @@
 ﻿using DuplicateHider.Data;
 using Playnite.SDK.Models;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DuplicateHider.Models
 {
@@ -46,7 +43,7 @@ namespace DuplicateHider.Models
             if (Games != null)
             {
                 Group.Games.Clear();
-                foreach(var game in Games)
+                foreach (var game in Games)
                 {
                     Group.Games.Add(game.Id);
                 }
@@ -61,7 +58,7 @@ namespace DuplicateHider.Models
             if (Synchronize)
             {
                 Group.Games.Clear();
-                foreach(var game in Games)
+                foreach (var game in Games)
                 {
                     Group.Games.Add(game.Id);
                 }
@@ -73,7 +70,7 @@ namespace DuplicateHider.Models
             Group = group;
             name = group.Name;
             scoreByOrder = group.ScoreByOrder;
-        } 
+        }
     }
 
     public class CustomGroupsViewModel
@@ -108,7 +105,7 @@ namespace DuplicateHider.Models
         public CustomGroupsViewModel(IList<CustomGroup> groups)
         {
             GroupsSource = groups;
-            foreach(var group in GroupsSource)
+            foreach (var group in GroupsSource)
             {
                 Groups.Add(new CustomGroupViewModel(group));
             }

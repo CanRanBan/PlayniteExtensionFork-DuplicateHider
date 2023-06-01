@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using DuplicateHider.Models;
-using DuplicateHider.Converters;
-using Playnite.SDK.Models;
-using System.Windows.Data;
+﻿using DuplicateHider.Models;
 using Playnite.SDK;
+using Playnite.SDK.Models;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace DuplicateHider.ViewModels
 {
     public class PriorityPropertyViewModel : ObservableObject
     {
         private PriorityProperty priorityProperty;
-        public PriorityProperty PriorityProperty { get => priorityProperty; set => SetValue(ref priorityProperty,value); }
+        public PriorityProperty PriorityProperty { get => priorityProperty; set => SetValue(ref priorityProperty, value); }
 
         private PropertyInfo propertyInfo;
 

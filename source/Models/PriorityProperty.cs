@@ -1,5 +1,4 @@
-﻿using GongSolutions.Wpf.DragDrop;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Playnite.SDK;
 using Playnite.SDK.Models;
 using System;
@@ -9,11 +8,8 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Data;
 
 namespace DuplicateHider.Models
 {
@@ -270,7 +266,7 @@ namespace DuplicateHider.Models
                     }
                 }
 
-                foreach(var value in set)
+                foreach (var value in set)
                 {
                     AddValue(value);
                 }

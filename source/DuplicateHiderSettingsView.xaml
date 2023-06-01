@@ -1,14 +1,18 @@
-﻿<UserControl xmlns:DuplicateHiders="clr-namespace:DuplicateHider"  x:Class="DuplicateHider.DuplicateHiderSettingsView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:views="clr-namespace:DuplicateHider.Views"
-             xmlns:models="clr-namespace:DuplicateHider.Models"
-             xmlns:dd="clr-namespace:GongSolutions.Wpf.DragDrop;assembly=GongSolutions.Wpf.DragDrop"
-             xmlns:conv="clr-namespace:DuplicateHider.Converters"
-             mc:Ignorable="d"
-             d:DesignHeight="400" d:DesignWidth="600"
-             d:DataContext="{d:DesignInstance IsDesignTimeCreatable=False, Type=DuplicateHiders:DuplicateHiderSettings}">
+﻿<UserControl
+    x:Class="DuplicateHider.DuplicateHiderSettingsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:DuplicateHiders="clr-namespace:DuplicateHider"
+    xmlns:conv="clr-namespace:DuplicateHider.Converters"
+    xmlns:models="clr-namespace:DuplicateHider.Models"
+    xmlns:views="clr-namespace:DuplicateHider.Views"
+    xmlns:dd="clr-namespace:GongSolutions.Wpf.DragDrop;assembly=GongSolutions.Wpf.DragDrop"
+    mc:Ignorable="d"
+    d:DesignWidth="600" d:DesignHeight="400"
+    d:DataContext="{d:DesignInstance IsDesignTimeCreatable=False, Type=DuplicateHiders:DuplicateHiderSettings}"
+    >
     <UserControl.Resources>
         <conv:GamePropertyToNameConverter x:Key="GamePropertyToNameConverter"/>
         <conv:PropertyIdToNameConverter x:Key="PropertyIdToNameConverter"/>
@@ -66,9 +70,9 @@
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                     <Grid HorizontalAlignment="Center" Margin="5">
-                        <Button Content="{DynamicResource LOCAddNewItem}" 
+                        <Button Content="{DynamicResource LOCAddNewItem}"
                                 x:Name="AddButton"
-                                ContextMenuService.IsEnabled="False" 
+                                ContextMenuService.IsEnabled="False"
                                 ContextMenuService.Placement="Right"
                                 ContextMenuService.PlacementTarget="{Binding ElementName=AddButton}"
                                 ContextMenuService.ShowOnDisabled="True"
@@ -106,7 +110,7 @@
                             <ListBox x:Name="PriorityListBox" Margin="0,5,0,0" MaxHeight="400" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
                         </StackPanel>
                         <StackPanel VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" Margin="6,10,15,0">
-                            <CheckBox x:Name="AutoUpdateCheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" 
+                            <CheckBox x:Name="AutoUpdateCheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0"
                                       Content="{DynamicResource LOC_DH_AutomaticUpdate}"
                                       ToolTip="{DynamicResource LOC_DH_AutomaticUpdateTooltip}">
                             </CheckBox>
@@ -167,9 +171,9 @@
                             <Label Content=": "/>
                         </StackPanel>
                         <TextBox x:Name="NewGroupNameBox" MinWidth="150"/>
-                        <Button Content="{DynamicResource LOCAddTitle}" 
-                                Height="{Binding ElementName=NewGroupNameBox, Path=ActualHeight}" 
-                                Padding="10,0" 
+                        <Button Content="{DynamicResource LOCAddTitle}"
+                                Height="{Binding ElementName=NewGroupNameBox, Path=ActualHeight}"
+                                Padding="10,0"
                                 VerticalContentAlignment="Center"
                                 x:Name="AddGroupButton"
                                 Click="AddGroupButton_Click"
@@ -185,15 +189,15 @@
                 <UniformGrid DockPanel.Dock="Bottom" Rows="1" Margin="5,10">
                     <StackPanel Margin="5,0">
                         <ToggleButton Padding="3" Content="{DynamicResource LOC_DH_PriorityAddHighTag}" x:Name="AddHighTagsToggle" Margin="0,0,0,5"/>
-                        <Popup Style="{StaticResource {x:Type Popup}}" 
+                        <Popup Style="{StaticResource {x:Type Popup}}"
                                    IsOpen="{Binding IsChecked, ElementName=AddHighTagsToggle, Mode=TwoWay, Delay=100}"
-                           
+
                            VerticalOffset="2"
-                           x:Name="AddHighTagsPopup" StaysOpen="False" Placement="Bottom" 
+                           x:Name="AddHighTagsPopup" StaysOpen="False" Placement="Bottom"
                            PlacementTarget="{Binding ElementName=AddHighTagsToggle}">
-                            <Border MinWidth="{Binding ActualWidth, ElementName=AddHighTagsToggle}" 
+                            <Border MinWidth="{Binding ActualWidth, ElementName=AddHighTagsToggle}"
                                     Margin="15"
-                                    Background="{DynamicResource PopupBackgroundBrush}" 
+                                    Background="{DynamicResource PopupBackgroundBrush}"
                                     CornerRadius="{DynamicResource ControlCornerRadius}">
                                 <Border.Effect>
                                     <DropShadowEffect BlurRadius="15" ShadowDepth="0" Opacity="0.75"/>
@@ -220,9 +224,9 @@
                     </StackPanel>
                     <StackPanel Margin="5,0">
                         <ToggleButton Padding="3" Content="{DynamicResource LOC_DH_PriorityAddLowTag}" x:Name="AddLowTagsToggle" Margin="0,0,0,5"/>
-                        <Popup Style="{StaticResource {x:Type Popup}}" 
+                        <Popup Style="{StaticResource {x:Type Popup}}"
                                    IsOpen="{Binding IsChecked, ElementName=AddLowTagsToggle, Mode=TwoWay, Delay=100}"
-                           x:Name="AddLowTagsPopup" StaysOpen="False" Placement="Bottom" 
+                           x:Name="AddLowTagsPopup" StaysOpen="False" Placement="Bottom"
                            PlacementTarget="{Binding ElementName=AddLowTagsToggle}" VerticalOffset="2">
 
                             <Border MinWidth="{Binding ActualWidth, ElementName=AddLowTagsToggle}" Margin="15" Background="{DynamicResource PopupBackgroundBrush}" CornerRadius="{DynamicResource ControlCornerRadius}">

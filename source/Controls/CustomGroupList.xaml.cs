@@ -5,20 +5,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace DuplicateHider.Views
 {
@@ -42,7 +32,7 @@ namespace DuplicateHider.Views
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void DeleteGame_CanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -59,7 +49,7 @@ namespace DuplicateHider.Views
 
         private void DeleteGame_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            if(sender is ListBox lb)
+            if (sender is ListBox lb)
             {
                 if (lb.ItemsSource is ObservableCollection<Game> cl && lb.SelectedItems is IList games)
                 {
@@ -164,7 +154,7 @@ namespace DuplicateHider.Views
 
         private void GameList_LostFocus(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void Expander_LostFocus(object sender, RoutedEventArgs e)
@@ -259,7 +249,7 @@ namespace DuplicateHider.Views
                 {
                     newSelection = new List<Game> { hoveredGame };
                 }
-                
+
                 lb.SelectedItems.Clear();
                 foreach (var game in newSelection)
                 {
@@ -330,7 +320,8 @@ namespace DuplicateHider.Views
                             insertionStart += 1;
                         }
                     }
-                } else if (e.Source is Expander expander)
+                }
+                else if (e.Source is Expander expander)
                 {
                     if (expander.Content is ListBox lb)
                     {
@@ -383,7 +374,8 @@ namespace DuplicateHider.Views
                         if (i < targetItems.Count)
                         {
                             targetItems.Insert(i, game);
-                        } else
+                        }
+                        else
                         {
                             targetItems.Add(game);
                         }
@@ -402,7 +394,7 @@ namespace DuplicateHider.Views
             {
                 Game = game;
                 Name = game.Name;
-                Description = $"Source: {game.Source?.Name ?? "Playnite"}, Platforms: {string.Join(", ", game.Platforms?.Select(p => p.Name)?? new List<string>())}";
+                Description = $"Source: {game.Source?.Name ?? "Playnite"}, Platforms: {string.Join(", ", game.Platforms?.Select(p => p.Name) ?? new List<string>())}";
             }
         }
 

@@ -366,7 +366,7 @@ namespace DuplicateHider
             if (sender is ListBox lb && lb.ItemsSource is IList items)
             {
                 var selected = lb.SelectedItems.OfType<object>().ToList();
-                foreach(var item in selected)
+                foreach (var item in selected)
                 {
                     items.Remove(item);
                 }

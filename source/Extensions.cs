@@ -13,7 +13,7 @@ namespace DuplicateHider
         {
             if (comparers != null)
             {
-                foreach(var comparer in comparers)
+                foreach (var comparer in comparers)
                 {
                     var c = comparer.Compare(a, b);
                     if (c != 0)
@@ -26,7 +26,7 @@ namespace DuplicateHider
         }
 
         private static readonly HashSet<TypeCode> numberTypeCodes = new HashSet<TypeCode>
-        { 
+        {
             TypeCode.Byte,
             TypeCode.Decimal,
             TypeCode.Double,
@@ -40,7 +40,7 @@ namespace DuplicateHider
             TypeCode.UInt64
         };
 
-        public static bool IsNumberType (this Type type)
+        public static bool IsNumberType(this Type type)
         {
             return numberTypeCodes.Contains(Type.GetTypeCode(type));
         }
@@ -54,7 +54,8 @@ namespace DuplicateHider
                 if (lastCharSpace)
                 {
                     builder.Append(char.ToUpper(c));
-                } else
+                }
+                else
                 {
                     builder.Append(c);
                 }

@@ -1,11 +1,8 @@
-﻿using Playnite.SDK.Models;
+﻿using Newtonsoft.Json;
+using Playnite.SDK.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace DuplicateHider.Data
 {
@@ -24,7 +21,7 @@ namespace DuplicateHider.Data
 
         public CustomGroup(IEnumerable<Game> games)
         {
-            foreach(var game in games)
+            foreach (var game in games)
             {
                 AddGame(game);
             }

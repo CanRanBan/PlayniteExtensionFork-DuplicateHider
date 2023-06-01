@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media;
 
 namespace DuplicateHider.Models
@@ -11,16 +9,16 @@ namespace DuplicateHider.Models
     public class LibraryStatisticsModel : ObservableObject
     {
         private GameSource librarySource;
-        public GameSource LibrarySource 
-        { 
-            get => librarySource; 
-            set 
-            { 
-                SetValue(ref librarySource, value); 
+        public GameSource LibrarySource
+        {
+            get => librarySource;
+            set
+            {
+                SetValue(ref librarySource, value);
                 OnPropertyChanged(nameof(Icon));
                 OnPropertyChanged(nameof(GamesTotal));
                 OnPropertyChanged(nameof(HiddenDuplicates));
-            } 
+            }
         }
 
         public ImageSource Icon => DuplicateHiderPlugin.SourceIconCache.GetOrGenerate(new Game { SourceId = LibrarySource?.Id ?? Guid.Empty });

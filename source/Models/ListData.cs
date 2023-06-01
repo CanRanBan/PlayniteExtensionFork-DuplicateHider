@@ -1,12 +1,7 @@
 ﻿using Playnite.SDK;
 using Playnite.SDK.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
@@ -41,11 +36,11 @@ namespace DuplicateHider.Models
             UninstallCommand = new RelayCommand(() => DuplicateHiderPlugin.API.InstallGame(Game.Id));
         }
 
-        public ListData(Game game, bool current, 
-            ICommand launchCommand = null, 
-            ICommand selectCommand = null, 
-            ICommand installCommand = null, 
-            ICommand uninstallCommand = null) 
+        public ListData(Game game, bool current,
+            ICommand launchCommand = null,
+            ICommand selectCommand = null,
+            ICommand installCommand = null,
+            ICommand uninstallCommand = null)
             : this(DuplicateHiderPlugin.SourceIconCache.GetOrGenerate(game), game, current, launchCommand, selectCommand, installCommand, uninstallCommand)
         {
 

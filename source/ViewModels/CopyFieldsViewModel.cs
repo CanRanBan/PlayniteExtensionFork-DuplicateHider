@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using DuplicateHider.Models;
+﻿using DuplicateHider.Models;
 using Playnite.SDK;
 using Playnite.SDK.Models;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Windows.Input;
 
 namespace DuplicateHider.ViewModels
 {
@@ -96,7 +93,7 @@ namespace DuplicateHider.ViewModels
             EnabledFields.TagsExcluded = ExcludedTags.Where(p => p.IsChecked).Select(p => p.Guid).ToHashSet();
         }
 
-            public CopyFieldsViewModel(Game source, IEnumerable<Game> targets) : this()
+        public CopyFieldsViewModel(Game source, IEnumerable<Game> targets) : this()
         {
             copyFields = new CopyFieldsModel[] { new CopyFieldsModel(source, targets) };
         }

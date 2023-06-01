@@ -1,11 +1,7 @@
 ﻿using Playnite.SDK;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace DuplicateHider.Converters
@@ -16,7 +12,7 @@ namespace DuplicateHider.Converters
         {
             if (value is ListSortDirection sortDirection)
             {
-                switch(sortDirection)
+                switch (sortDirection)
                 {
                     case ListSortDirection.Ascending:
                         return ResourceProvider.GetString("LOCMenuSortAscending");

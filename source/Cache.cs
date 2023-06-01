@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Timers;
-using System.Windows.Controls;
 
 namespace DuplicateHider
 {
@@ -52,7 +47,7 @@ namespace DuplicateHider
                 item = generate.Invoke();
             }
 #if DEBUG
-            System.Diagnostics.Debug.WriteLine($"Recycled={Recycled}, Generated={Generated}, Count={Count}"); 
+            System.Diagnostics.Debug.WriteLine($"Recycled={Recycled}, Generated={Generated}, Count={Count}");
 #endif
             return item;
         }
@@ -79,7 +74,8 @@ namespace DuplicateHider
 
     class BoundedCache<T> : UnboundedCache<T>
     {
-        public int Capacity {
+        public int Capacity
+        {
             get => capacity;
             set
             {
@@ -99,7 +95,7 @@ namespace DuplicateHider
             }
         }
 
-        public override void Consume<Collection>(Collection collection) 
+        public override void Consume<Collection>(Collection collection)
         {
             for (int i = 0; i + Count < capacity && i < collection.Count; ++i)
             {

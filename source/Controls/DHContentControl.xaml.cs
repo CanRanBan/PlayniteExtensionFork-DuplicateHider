@@ -2,22 +2,12 @@
 using Playnite.SDK;
 using Playnite.SDK.Models;
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("DuplicateHider")]
@@ -30,11 +20,12 @@ namespace DuplicateHider.Controls
     {
         public ObservableCollection<ListData> Games { get; set; } = new ObservableCollection<ListData>();
 
-        public Boolean MoreThanOneCopy {
+        public Boolean MoreThanOneCopy
+        {
             get => (Boolean)GetValue(MoreThanOneGameProperty);
             set => SetValue(MoreThanOneGameProperty, value);
         }
-        public static DependencyProperty MoreThanOneGameProperty 
+        public static DependencyProperty MoreThanOneGameProperty
             = DependencyProperty.Register(nameof(MoreThanOneCopy), typeof(Boolean), typeof(DHContentControl), new PropertyMetadata(false));
 
         public ListData CurrentGame
@@ -53,7 +44,8 @@ namespace DuplicateHider.Controls
         public static DependencyProperty SwitchedGroupProperty
             = DependencyProperty.Register(nameof(SwitchedGroup), typeof(Boolean), typeof(DHContentControl), new PropertyMetadata(true));
 
-        public ICommand OpenMenuCommand {
+        public ICommand OpenMenuCommand
+        {
             get => (ICommand)GetValue(OpenMenuCommandProperty);
             set => SetValue(OpenMenuCommandProperty, value);
         }
@@ -68,8 +60,9 @@ namespace DuplicateHider.Controls
             DataContext = this;
             MouseDown += DHContentControl_MouseDown;
             IsVisibleChanged += DHContentControl_IsVisibleChanged;
-            OpenMenuCommand = new RelayCommand(() => {
-                
+            OpenMenuCommand = new RelayCommand(() =>
+            {
+
             });
         }
 
@@ -84,7 +77,8 @@ namespace DuplicateHider.Controls
                     CurrentGame = GameContext is Game ? new ListData(GameContext, true) : null;
                 }
                 UpdateContent(GameContext);
-            } else
+            }
+            else
             {
                 DuplicateHiderPlugin.Instance.GameSelected -= DHP_GameSelected;
                 DuplicateHiderPlugin.Instance.GroupUpdated -= DHP_GroupUpdated;
@@ -123,14 +117,14 @@ namespace DuplicateHider.Controls
                     Games.Clear();
                 }
 #if DEBUG
-                System.Diagnostics.Debug.WriteLine("Called Group Update"); 
+                System.Diagnostics.Debug.WriteLine("Called Group Update");
 #endif
             });
         }
 
         public DHContentControl(int n) : this()
         {
-            
+
         }
 
         public void GameContextChanged(Game oldContext, Game newContext)
@@ -186,7 +180,8 @@ namespace DuplicateHider.Controls
                         Games.Add(new ListData(copy, copy.Id == DuplicateHiderPlugin.Instance.CurrentlySelected));
                     }
                 }
-            } else
+            }
+            else
             {
                 Games.Clear();
             }
@@ -194,15 +189,15 @@ namespace DuplicateHider.Controls
 
         private IEnumerable<Game> GetGames(Game game)
         {
-                if (game != null)
-                {
-                    var copys = DuplicateHiderPlugin.Instance.GetCopies(game);
+            if (game != null)
+            {
+                var copys = DuplicateHiderPlugin.Instance.GetCopies(game);
 
-                    if (MaxNumberOfIconsCC > 0)
-                        return copys.Take(MaxNumberOfIconsCC);
-                    else
-                        return copys;
-                }
+                if (MaxNumberOfIconsCC > 0)
+                    return copys.Take(MaxNumberOfIconsCC);
+                else
+                    return copys;
+            }
 
             return new Game[] { };
         }

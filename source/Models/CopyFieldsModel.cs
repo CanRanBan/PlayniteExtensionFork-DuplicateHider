@@ -1,12 +1,8 @@
 ﻿using Playnite.SDK.Models;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace DuplicateHider.Models
 {
@@ -24,7 +20,7 @@ namespace DuplicateHider.Models
         {
             sourceGame = source;
             targetGames = targets;
-            foreach(var game in targets)
+            foreach (var game in targets)
             {
                 // backup.Add(game.Copy());
             }
@@ -41,7 +37,7 @@ namespace DuplicateHider.Models
                 var sourceValues = property.GetValue(source) as List<Guid>;
                 if (sourceValues != null)
                 {
-                    foreach(var sourceValue in sourceValues)
+                    foreach (var sourceValue in sourceValues)
                     {
                         if (!excluded.Contains(sourceValue))
                         {
@@ -49,12 +45,12 @@ namespace DuplicateHider.Models
                         }
                     }
                 }
-                foreach(var target in targetGames)
+                foreach (var target in targetGames)
                 {
                     var targetValues = property.GetValue(target) as List<Guid>;
                     if (targetValues != null)
                     {
-                        foreach(var targetValue in targetValues)
+                        foreach (var targetValue in targetValues)
                         {
                             if (!excluded.Contains(targetValue))
                             {
@@ -68,7 +64,7 @@ namespace DuplicateHider.Models
                     sourceValues = new List<Guid>();
                 }
                 property.SetValue(source, union.Union(sourceValues.Intersect(excluded)).ToList());
-                foreach(var target in targets)
+                foreach (var target in targets)
                 {
                     var newTargetValues = union;
                     var targetValues = property.GetValue(target) as List<Guid>;
