@@ -184,44 +184,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\Amazon.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\Battle.net.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\Bethesda.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\Epic.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\GOG.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\Humble.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\itch.io.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\Origin.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\Playnite.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\PSN.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\Steam.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\Twitch.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\Ubisoft Connect.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\Xbox.ico" />
   </ItemGroup>
   <ItemGroup>
