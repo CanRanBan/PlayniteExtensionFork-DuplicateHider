@@ -1,6 +1,6 @@
 AddonId: felixkmh_DuplicateHider_Plugin
 Type: Generic
-Name: DuplicateHider
+Name: Duplicate Hider
 Author: felixkmh
 ShortDescription: Hides duplicate game copies based on source priority.
 InstallerManifestUrl: https://raw.githubusercontent.com/felixkmh/DuplicateHider/master/InstallerManifest/felixkmh_DuplicateHider_Plugin.yaml
