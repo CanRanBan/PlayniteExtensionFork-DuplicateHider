@@ -1,11 +1,6 @@
-# DuplicateHider
+# <img src="Source/icon.png" alt="Duplicate Hider icon" width="32" height="32" /> Duplicate Hider [![Crowdin](https://badges.crowdin.net/duplicatehider/localized.svg)](https://crowdin.com/project/duplicatehider)
 
-## Important: Version 3.x.x is only compatible with Playnite 9 or 10. The latest Version compatible with Playnite 8 is [v2.5.4](https://github.com/felixkmh/DuplicateHider/releases/tag/v2.5.4).
-
-[Playnite Forum Post](https://playnite.link/forum/thread-308.html)
-An extension for [Playnite](https://github.com/JosefNemec/Playnite/ "Playnite - video game library manager") by JosefNemec that hides additional copies of games.
-
-[![Crowdin](https://badges.crowdin.net/duplicatehider/localized.svg)](https://crowdin.com/project/duplicatehider)
+An extension for [Playnite](https://github.com/JosefNemec/Playnite/ "Playnite - An open source video game library manager and launcher") by Josef Nemec that hides additional copies of games.
 
 If you like this Playnite extension consider supporting the main developers of Duplicate Hider and Playnite:
 | Project | Main Developer | Platform | Sponsorship Link |
