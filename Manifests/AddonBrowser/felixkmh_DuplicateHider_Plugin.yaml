@@ -6,7 +6,7 @@ ShortDescription: Hides duplicate game copies based on customizable priorities. 
 InstallerManifestUrl: https://raw.githubusercontent.com/felixkmh/DuplicateHider/master/InstallerManifest/felixkmh_DuplicateHider_Plugin.yaml
 SourceUrl: https://github.com/felixkmh/DuplicateHider
 Description: Duplicate Hider tries to hide all but one copy of the same game, based on the name of the game. This is useful if you own the same game on different platforms, like Steam and GOG, for example. In order to determine which copy stays visible, you can set up a priority list. An entry to that list could be installation status, sources, libraries and more. If two games are the same based on a priority property, the next one is checked and so on. Hiding duplicates can be done automatically (if the "Update Rank Automatically" option is enabled), or manually using the "Hide Duplicates" and "Reveal Duplicates" menu functions. Also, DuplicateHider provides custom UI elements for themes that support them. The UI elements allow easy access to the hidden duplicates of your games.
-Tags: ["duplicates", "library"]
+Tags: ["felixkmh", "Duplicate", "Hide", "Copy", "Group", "Merge", "Combine", "Join", "Connect", "Link", "Customize", "Priority"]
 Links:
     GitHub: https://github.com/felixkmh/DuplicateHider
     Support (Playnite Discord): https://discord.com/channels/365863063296933888/808419165311467630
