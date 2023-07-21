@@ -339,9 +339,3 @@ Packages:
       - 'Playnite 9 Beta support, not compatible with Playnite 8!'
       - 'Custom UI Elements for custom theme integration'
       - 'Changed Id, so you need to uninstall before reinstalling!'
-  - Version: 2.3.2
-    RequiredApiVersion: 5.5.0
-    ReleaseDate: 2021-01-09
-    PackageUrl: https://github.com/felixkmh/DuplicateHider/releases/download/v2.3.2/DuplicateHider_2_3_2.pext
-    Changelog:
-      - 'Fixed extension crashing when games contained numbers outside int32 range.'
