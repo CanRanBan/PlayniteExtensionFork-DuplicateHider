@@ -1,6 +1,6 @@
 # <img src="Source/icon.png" alt="Duplicate Hider icon" width="32" height="32" /> Duplicate Hider [![Crowdin](https://badges.crowdin.net/duplicatehider/localized.svg)](https://crowdin.com/project/duplicatehider)
 
-An extension for [Playnite](https://github.com/JosefNemec/Playnite/ "Playnite - An open source video game library manager and launcher") by Josef Nemec that hides additional copies of games.
+An extension for [Playnite](https://github.com/JosefNemec/Playnite/ "Playnite - An open source video game library manager and launcher") that hides additional copies of games.
 
 If you like this Playnite extension consider supporting the main developers of Duplicate Hider and Playnite:
 | Project | Main Developer | Platform | Sponsorship Link |
