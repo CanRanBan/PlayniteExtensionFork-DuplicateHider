@@ -7,7 +7,11 @@ An extension for [Playnite](https://github.com/JosefNemec/Playnite/ "Playnite - 
 
 [![Crowdin](https://badges.crowdin.net/duplicatehider/localized.svg)](https://crowdin.com/project/duplicatehider)
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/C1C6CH5IN)
+If you like this Playnite extension consider supporting the main developers of Duplicate Hider and Playnite:
+| Project | Main Developer | Platform | Sponsorship Link |
+| ---- | ---- | :----: | ---- |
+| Duplicate Hider | felixkmh | <img src="https://github.githubassets.com/images/modules/site/icons/funding_platforms/ko_fi.svg" alt="Ko-fi icon" width="32" height="32" /> | [ko-fi.com/felixkmh](https://ko-fi.com/felixkmh) |
+| Playnite | Josef Nemec | <img src="https://github.githubassets.com/images/modules/site/icons/funding_platforms/patreon.svg" alt="Patreon icon" width="32" height="32" /> | [patreon.com/playnite](https://patreon.com/playnite) |
 
 ## Extension Settings
 
