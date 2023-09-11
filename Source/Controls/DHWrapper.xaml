@@ -8,5 +8,5 @@
     mc:Ignorable="d"
     Focusable="False"
     >
-    <dh:DHContentControl x:Name="DH_ContentControl" Focusable="False"/>
+    <dh:DHContentControl x:Name="DH_ContentControl" Focusable="False" />
 </PluginUserControl>

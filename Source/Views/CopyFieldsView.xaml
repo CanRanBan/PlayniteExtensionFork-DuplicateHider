@@ -11,394 +11,382 @@
     d:DataContext="{d:DesignInstance IsDesignTimeCreatable=False, Type=viewModels:CopyFieldsViewModel}"
     >
     <UserControl.Resources>
-        <converters:GameToPrioConverter x:Key="GameToPrioConverter"/>
-        <converters:DatabaseIdToNameConverter x:Key="DatabaseIdToNameConverter"/>
+        <converters:GameToPrioConverter x:Key="GameToPrioConverter" />
+        <converters:DatabaseIdToNameConverter x:Key="DatabaseIdToNameConverter" />
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <GroupBox Header="{DynamicResource LOC_DH_GameFields}" Margin="2,0">
             <ScrollViewer>
                 <StackPanel HorizontalAlignment="Stretch" Margin="0">
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.Name}"/>
-                        <TextBlock Text="{DynamicResource LOCGameNameTitle}" Foreground="{DynamicResource TextBrush}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.Name}" />
+                        <TextBlock Text="{DynamicResource LOCGameNameTitle}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.SortingName}"/>
-                        <TextBlock Text="{DynamicResource LOCGameSortingNameTitle}" Foreground="{DynamicResource TextBrush}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.SortingName}" />
+                        <TextBlock Text="{DynamicResource LOCGameSortingNameTitle}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.Genres}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.Genres}" />
                         <CheckBox IsChecked="{Binding EnabledFields.GenresUnion}" DockPanel.Dock="Right"
                                   ToolTip="{DynamicResource LOC_DH_UnionizeField}"
-                                  IsEnabled="{Binding EnabledFields.Genres}"/>
+                                  IsEnabled="{Binding EnabledFields.Genres}" />
                         <ToggleButton x:Name="GenreToggle" IsEnabled="{Binding EnabledFields.Genres}"
                                       DockPanel.Dock="Right" Padding="5,0"
                                       ToolTip="Excluded">
                             <ToggleButton.Content>
-                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}"/>
+                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}" />
                             </ToggleButton.Content>
                         </ToggleButton>
                         <Popup IsOpen="{Binding IsChecked, ElementName=GenreToggle, Delay=150, Mode=TwoWay}" StaysOpen="False"
                                PlacementTarget="{Binding ElementName=GenreToggle}" Placement="Bottom">
                             <Border Background="{DynamicResource PopupBackgroundBrush}">
-                                <ListBox ItemsSource="{Binding ExcludedGenres}" MaxHeight="300"
-                                              ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                <ListBox ItemsSource="{Binding ExcludedGenres}" MaxHeight="300" ScrollViewer.VerticalScrollBarVisibility="Auto">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
-                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}" />
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
                             </Border>
                         </Popup>
-                        <TextBlock Text="{DynamicResource LOCGenresLabel}" Foreground="{DynamicResource TextBrush}"/>
+                        <TextBlock Text="{DynamicResource LOCGenresLabel}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.Platforms}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.Platforms}" />
                         <CheckBox IsChecked="{Binding EnabledFields.PlatformsUnion}" DockPanel.Dock="Right"
                                   ToolTip="{DynamicResource LOC_DH_UnionizeField}"
-                                  IsEnabled="{Binding EnabledFields.Platforms}"/>
+                                  IsEnabled="{Binding EnabledFields.Platforms}" />
                         <ToggleButton x:Name="PlatformsToggle" IsEnabled="{Binding EnabledFields.Platforms}"
                                       DockPanel.Dock="Right" Padding="5,0"
                                       ToolTip="{DynamicResource LOC_DH_ExcludedTooltip}">
                             <ToggleButton.Content>
-                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}"/>
+                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}" />
                             </ToggleButton.Content>
                         </ToggleButton>
                         <Popup IsOpen="{Binding IsChecked, ElementName=PlatformsToggle, Delay=150, Mode=TwoWay}" StaysOpen="False"
                                PlacementTarget="{Binding ElementName=PlatformsToggle}" Placement="Bottom">
                             <Border Background="{DynamicResource PopupBackgroundBrush}">
-                                <ListBox ItemsSource="{Binding ExcludedPlatforms}" MaxHeight="300"
-                                              ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                <ListBox ItemsSource="{Binding ExcludedPlatforms}" MaxHeight="300" ScrollViewer.VerticalScrollBarVisibility="Auto">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
-                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}" />
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
                             </Border>
                         </Popup>
-                        <TextBlock Text="{DynamicResource LOCGamePlatformTitle}" Foreground="{DynamicResource TextBrush}"/>
+                        <TextBlock Text="{DynamicResource LOCGamePlatformTitle}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.Categories}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.Categories}" />
                         <CheckBox IsChecked="{Binding EnabledFields.CategoriesUnion}" DockPanel.Dock="Right"
                                   ToolTip="{DynamicResource LOC_DH_UnionizeField}"
-                                  IsEnabled="{Binding EnabledFields.Categories}"/>
+                                  IsEnabled="{Binding EnabledFields.Categories}" />
                         <ToggleButton x:Name="CategoriesToggle" IsEnabled="{Binding EnabledFields.Categories}"
                                       DockPanel.Dock="Right" Padding="5,0"
                                       ToolTip="{DynamicResource LOC_DH_ExcludedTooltip}">
                             <ToggleButton.Content>
-                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}"/>
+                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}" />
                             </ToggleButton.Content>
                         </ToggleButton>
                         <Popup IsOpen="{Binding IsChecked, ElementName=CategoriesToggle, Delay=150, Mode=TwoWay}" StaysOpen="False"
                                PlacementTarget="{Binding ElementName=CategoriesToggle}" Placement="Bottom">
                             <Border Background="{DynamicResource PopupBackgroundBrush}">
-                                <ListBox ItemsSource="{Binding ExcludedCategories}" MaxHeight="300"
-                                              ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                <ListBox ItemsSource="{Binding ExcludedCategories}" MaxHeight="300" ScrollViewer.VerticalScrollBarVisibility="Auto">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
-                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}" />
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
                             </Border>
                         </Popup>
-                        <TextBlock Text="{DynamicResource LOCGameCategoriesTitle}" Foreground="{DynamicResource TextBrush}"/>
+                        <TextBlock Text="{DynamicResource LOCGameCategoriesTitle}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
                         <CheckBox IsChecked="{Binding EnabledFields.Icon}"/>
-                        <TextBlock Text="{DynamicResource LOCGameIconTitle}" Foreground="{DynamicResource TextBrush}"/>
+                        <TextBlock Text="{DynamicResource LOCGameIconTitle}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.CoverImage}"/>
-                        <TextBlock Text="{DynamicResource LOCGameCoverTitle}" Foreground="{DynamicResource TextBrush}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.CoverImage}" />
+                        <TextBlock Text="{DynamicResource LOCGameCoverTitle}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.BackgroundImage}"/>
-                        <TextBlock Text="{DynamicResource LOCGameBackgroundTitle}" Foreground="{DynamicResource TextBrush}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.BackgroundImage}" />
+                        <TextBlock Text="{DynamicResource LOCGameBackgroundTitle}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.Tags}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.Tags}" />
                         <CheckBox IsChecked="{Binding EnabledFields.TagsUnion}" DockPanel.Dock="Right"
                                   ToolTip="{DynamicResource LOC_DH_UnionizeField}"
-                                  IsEnabled="{Binding EnabledFields.Tags}"/>
+                                  IsEnabled="{Binding EnabledFields.Tags}" />
                         <ToggleButton x:Name="TagsToggle" IsEnabled="{Binding EnabledFields.Tags}"
                                       DockPanel.Dock="Right" Padding="5,0"
                                       ToolTip="{DynamicResource LOC_DH_ExcludedTooltip}">
                             <ToggleButton.Content>
-                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}"/>
+                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}" />
                             </ToggleButton.Content>
                         </ToggleButton>
                         <Popup IsOpen="{Binding IsChecked, ElementName=TagsToggle, Delay=150, Mode=TwoWay}" StaysOpen="False"
                                PlacementTarget="{Binding ElementName=TagsToggle}" Placement="Bottom">
                             <Border Background="{DynamicResource PopupBackgroundBrush}">
-                                <ListBox ItemsSource="{Binding ExcludedTags}" MaxHeight="300"
-                                              ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                <ListBox ItemsSource="{Binding ExcludedTags}" MaxHeight="300" ScrollViewer.VerticalScrollBarVisibility="Auto">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
-                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}" />
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
                             </Border>
                         </Popup>
-                        <TextBlock Text="{DynamicResource LOCGameTagsTitle}" Foreground="{DynamicResource TextBrush}"/>
+                        <TextBlock Text="{DynamicResource LOCGameTagsTitle}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.Description}"/>
-                        <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}" Foreground="{DynamicResource TextBrush}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.Description}" />
+                        <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.Features}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.Features}" />
                         <CheckBox IsChecked="{Binding EnabledFields.FeaturesUnion}" DockPanel.Dock="Right"
                                   ToolTip="{DynamicResource LOC_DH_UnionizeField}"
-                                  IsEnabled="{Binding EnabledFields.Features}"/>
+                                  IsEnabled="{Binding EnabledFields.Features}" />
                         <ToggleButton x:Name="FeaturesToggle" IsEnabled="{Binding EnabledFields.Features}"
                                       DockPanel.Dock="Right" Padding="5,0"
                                       ToolTip="{DynamicResource LOC_DH_ExcludedTooltip}">
                             <ToggleButton.Content>
-                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}"/>
+                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}" />
                             </ToggleButton.Content>
                         </ToggleButton>
                         <Popup IsOpen="{Binding IsChecked, ElementName=FeaturesToggle, Delay=150, Mode=TwoWay}" StaysOpen="False"
                                PlacementTarget="{Binding ElementName=FeaturesToggle}" Placement="Bottom">
                             <Border Background="{DynamicResource PopupBackgroundBrush}">
-                                <ListBox ItemsSource="{Binding ExcludedFeatures}" MaxHeight="300"
-                                              ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                <ListBox ItemsSource="{Binding ExcludedFeatures}" MaxHeight="300" ScrollViewer.VerticalScrollBarVisibility="Auto">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
-                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}" />
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
                             </Border>
                         </Popup>
-                        <TextBlock Text="{DynamicResource LOCFeaturesLabel}" Foreground="{DynamicResource TextBrush}"/>
+                        <TextBlock Text="{DynamicResource LOCFeaturesLabel}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.Developers}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.Developers}" />
                         <CheckBox IsChecked="{Binding EnabledFields.DevelopersUnion}" DockPanel.Dock="Right"
                                   ToolTip="{DynamicResource LOC_DH_UnionizeField}"
-                                  IsEnabled="{Binding EnabledFields.Developers}"/>
+                                  IsEnabled="{Binding EnabledFields.Developers}" />
                         <ToggleButton x:Name="DevelopersToggle" IsEnabled="{Binding EnabledFields.Developers}"
                                       DockPanel.Dock="Right" Padding="5,0"
                                       ToolTip="{DynamicResource LOC_DH_ExcludedTooltip}">
                             <ToggleButton.Content>
-                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}"/>
+                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}" />
                             </ToggleButton.Content>
                         </ToggleButton>
                         <Popup IsOpen="{Binding IsChecked, ElementName=DevelopersToggle, Delay=150, Mode=TwoWay}" StaysOpen="False"
                                PlacementTarget="{Binding ElementName=DevelopersToggle}" Placement="Bottom">
                             <Border Background="{DynamicResource PopupBackgroundBrush}">
-                                <ListBox ItemsSource="{Binding ExcludedDevelopers}" MaxHeight="300"
-                                              ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                <ListBox ItemsSource="{Binding ExcludedDevelopers}" MaxHeight="300" ScrollViewer.VerticalScrollBarVisibility="Auto">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
-                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}" />
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
                             </Border>
                         </Popup>
-                        <TextBlock Text="{DynamicResource LOCDevelopersLabel}" Foreground="{DynamicResource TextBrush}"/>
+                        <TextBlock Text="{DynamicResource LOCDevelopersLabel}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.Publishers}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.Publishers}" />
                         <CheckBox IsChecked="{Binding EnabledFields.PublishersUnion}" DockPanel.Dock="Right"
                                   ToolTip="{DynamicResource LOC_DH_UnionizeField}"
-                                  IsEnabled="{Binding EnabledFields.Publishers}"/>
+                                  IsEnabled="{Binding EnabledFields.Publishers}" />
                         <ToggleButton x:Name="PublishersToggle" IsEnabled="{Binding EnabledFields.Publishers}"
                                       DockPanel.Dock="Right" Padding="5,0"
                                       ToolTip="{DynamicResource LOC_DH_ExcludedTooltip}">
                             <ToggleButton.Content>
-                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}"/>
+                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}" />
                             </ToggleButton.Content>
                         </ToggleButton>
                         <Popup IsOpen="{Binding IsChecked, ElementName=PublishersToggle, Delay=150, Mode=TwoWay}" StaysOpen="False"
                                PlacementTarget="{Binding ElementName=PublishersToggle}" Placement="Bottom">
                             <Border Background="{DynamicResource PopupBackgroundBrush}">
-                                <ListBox ItemsSource="{Binding ExcludedPublishers}" MaxHeight="300"
-                                              ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                <ListBox ItemsSource="{Binding ExcludedPublishers}" MaxHeight="300" ScrollViewer.VerticalScrollBarVisibility="Auto">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
-                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}" />
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
                             </Border>
                         </Popup>
-                        <TextBlock Text="{DynamicResource LOCPublishersLabel}" Foreground="{DynamicResource TextBrush}"/>
+                        <TextBlock Text="{DynamicResource LOCPublishersLabel}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.Regions}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.Regions}" />
                         <CheckBox IsChecked="{Binding EnabledFields.RegionsUnion}" DockPanel.Dock="Right"
                                   ToolTip="{DynamicResource LOC_DH_UnionizeField}"
-                                  IsEnabled="{Binding EnabledFields.Regions}"/>
+                                  IsEnabled="{Binding EnabledFields.Regions}" />
                         <ToggleButton x:Name="RegionsToggle" IsEnabled="{Binding EnabledFields.Regions}"
                                       DockPanel.Dock="Right" Padding="5,0"
                                       ToolTip="{DynamicResource LOC_DH_ExcludedTooltip}">
                             <ToggleButton.Content>
-                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}"/>
+                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}" />
                             </ToggleButton.Content>
                         </ToggleButton>
                         <Popup IsOpen="{Binding IsChecked, ElementName=RegionsToggle, Delay=150, Mode=TwoWay}" StaysOpen="False"
                                PlacementTarget="{Binding ElementName=RegionsToggle}" Placement="Bottom">
                             <Border Background="{DynamicResource PopupBackgroundBrush}">
-                                <ListBox ItemsSource="{Binding ExcludedRegions}" MaxHeight="300"
-                                              ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                <ListBox ItemsSource="{Binding ExcludedRegions}" MaxHeight="300" ScrollViewer.VerticalScrollBarVisibility="Auto">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
-                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}" />
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
                             </Border>
                         </Popup>
-                        <TextBlock Text="{DynamicResource LOCRegionsLabel}" Foreground="{DynamicResource TextBrush}"/>
+                        <TextBlock Text="{DynamicResource LOCRegionsLabel}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.AgeRatings}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.AgeRatings}" />
                         <CheckBox IsChecked="{Binding EnabledFields.AgeRatingsUnion}" DockPanel.Dock="Right"
                                   ToolTip="{DynamicResource LOC_DH_UnionizeField}"
-                                  IsEnabled="{Binding EnabledFields.AgeRatings}"/>
+                                  IsEnabled="{Binding EnabledFields.AgeRatings}" />
                         <ToggleButton x:Name="AgeRatingsToggle" IsEnabled="{Binding EnabledFields.AgeRatings}"
                                       DockPanel.Dock="Right" Padding="5,0"
                                       ToolTip="{DynamicResource LOC_DH_ExcludedTooltip}">
                             <ToggleButton.Content>
-                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}"/>
+                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}" />
                             </ToggleButton.Content>
                         </ToggleButton>
                         <Popup IsOpen="{Binding IsChecked, ElementName=AgeRatingsToggle, Delay=150, Mode=TwoWay}" StaysOpen="False"
                                PlacementTarget="{Binding ElementName=AgeRatingsToggle}" Placement="Bottom">
                             <Border Background="{DynamicResource PopupBackgroundBrush}">
-                                <ListBox ItemsSource="{Binding ExcludedAgeRatings}" MaxHeight="300"
-                                              ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                <ListBox ItemsSource="{Binding ExcludedAgeRatings}" MaxHeight="300" ScrollViewer.VerticalScrollBarVisibility="Auto">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
-                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}" />
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
                             </Border>
                         </Popup>
-                        <TextBlock Text="{DynamicResource LOCAgeRatingsLabel}" Foreground="{DynamicResource TextBrush}"/>
+                        <TextBlock Text="{DynamicResource LOCAgeRatingsLabel}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.ReleaseDate}"/>
-                        <TextBlock Text="{DynamicResource LOCGameReleaseDateTitle}" Foreground="{DynamicResource TextBrush}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.ReleaseDate}" />
+                        <TextBlock Text="{DynamicResource LOCGameReleaseDateTitle}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.Series}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.Series}" />
                         <CheckBox IsChecked="{Binding EnabledFields.SeriesUnion}" DockPanel.Dock="Right"
                                   ToolTip="{DynamicResource LOC_DH_UnionizeField}"
-                                  IsEnabled="{Binding EnabledFields.Series}"/>
+                                  IsEnabled="{Binding EnabledFields.Series}" />
                         <ToggleButton x:Name="SeriesToggle" IsEnabled="{Binding EnabledFields.Series}"
                                       DockPanel.Dock="Right" Padding="5,0"
                                       ToolTip="{DynamicResource LOC_DH_ExcludedTooltip}">
                             <ToggleButton.Content>
-                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}"/>
+                                <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}" />
                             </ToggleButton.Content>
                         </ToggleButton>
                         <Popup IsOpen="{Binding IsChecked, ElementName=SeriesToggle, Delay=150, Mode=TwoWay}" StaysOpen="False"
                                PlacementTarget="{Binding ElementName=SeriesToggle}" Placement="Bottom">
                             <Border Background="{DynamicResource PopupBackgroundBrush}">
-                                <ListBox ItemsSource="{Binding ExcludedSeries}" MaxHeight="300"
-                                              ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                <ListBox ItemsSource="{Binding ExcludedSeries}" MaxHeight="300" ScrollViewer.VerticalScrollBarVisibility="Auto">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
-                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}" />
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
                             </Border>
                         </Popup>
-                        <TextBlock Text="{DynamicResource LOCSeriesLabel}" Foreground="{DynamicResource TextBrush}"/>
+                        <TextBlock Text="{DynamicResource LOCSeriesLabel}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.UserScore}"/>
-                        <TextBlock Text="{DynamicResource LOCUserScore}" Foreground="{DynamicResource TextBrush}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.UserScore}" />
+                        <TextBlock Text="{DynamicResource LOCUserScore}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.CriticsScore}"/>
-                        <TextBlock Text="{DynamicResource LOCCriticScore}" Foreground="{DynamicResource TextBrush}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.CriticsScore}" />
+                        <TextBlock Text="{DynamicResource LOCCriticScore}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.CommunityScore}"/>
-                        <TextBlock Text="{DynamicResource LOCCommunityScore}" Foreground="{DynamicResource TextBrush}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.CommunityScore}" />
+                        <TextBlock Text="{DynamicResource LOCCommunityScore}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.Links}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.Links}" />
                         <CheckBox IsChecked="{Binding EnabledFields.LinksUnion}" DockPanel.Dock="Right"
                                   ToolTip="{DynamicResource LOC_DH_UnionizeField}"
-                                  IsEnabled="{Binding EnabledFields.Links}"/>
-                        <TextBlock Text="{DynamicResource LOCLinksLabel}" Foreground="{DynamicResource TextBrush}"/>
+                                  IsEnabled="{Binding EnabledFields.Links}" />
+                        <TextBlock Text="{DynamicResource LOCLinksLabel}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <DockPanel Margin="3">
-                        <CheckBox IsChecked="{Binding EnabledFields.CompletionStatus}"/>
-                        <TextBlock Text="{DynamicResource LOCCompletionStatus}" Foreground="{DynamicResource TextBrush}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.CompletionStatus}" />
+                        <TextBlock Text="{DynamicResource LOCCompletionStatus}" Foreground="{DynamicResource TextBrush}" />
                     </DockPanel>
                     <StackPanel Orientation="Horizontal" Margin="3"
                                 Tag="{DynamicResource LOCExtra_Metadata_Loader_MenuItemSectionLogos}"
                                 Visibility="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Tag, Converter={StaticResource StringNullOrEmptyToVisibilityConverter}}">
-                        <CheckBox IsChecked="{Binding EnabledFields.Logo}"/>
-                        <TextBlock Text="{DynamicResource LOCExtra_Metadata_Loader_MenuItemSectionLogos}" Foreground="{DynamicResource TextBrush}"/>
-                        <TextBlock Text=" (EMT)" Foreground="{DynamicResource TextBrush}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.Logo}" />
+                        <TextBlock Text="{DynamicResource LOCExtra_Metadata_Loader_MenuItemSectionLogos}" Foreground="{DynamicResource TextBrush}" />
+                        <TextBlock Text=" (EMT)" Foreground="{DynamicResource TextBrush}" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="3"
                                 Tag="{DynamicResource LOCExtra_Metadata_Loader_MenuItemSectionVideos}"
                                 Visibility="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Tag, Converter={StaticResource StringNullOrEmptyToVisibilityConverter}}">
-                        <CheckBox IsChecked="{Binding EnabledFields.Trailer}"/>
-                        <TextBlock Text="{DynamicResource LOCExtra_Metadata_Loader_MenuItemSectionVideos}" Foreground="{DynamicResource TextBrush}"/>
-                        <TextBlock Text=" (EMT)" Foreground="{DynamicResource TextBrush}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.Trailer}" />
+                        <TextBlock Text="{DynamicResource LOCExtra_Metadata_Loader_MenuItemSectionVideos}" Foreground="{DynamicResource TextBrush}" />
+                        <TextBlock Text=" (EMT)" Foreground="{DynamicResource TextBrush}" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="3"
                                 Tag="{DynamicResource LOCExtra_Metadata_Loader_MenuItemSectionMicrovideos}"
                                 Visibility="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Tag, Converter={StaticResource StringNullOrEmptyToVisibilityConverter}}">
-                        <CheckBox IsChecked="{Binding EnabledFields.MicroTrailer}"/>
-                        <TextBlock Text="{DynamicResource LOCExtra_Metadata_Loader_MenuItemSectionMicrovideos}" Foreground="{DynamicResource TextBrush}"/>
-                        <TextBlock Text=" (EMT)" Foreground="{DynamicResource TextBrush}"/>
+                        <CheckBox IsChecked="{Binding EnabledFields.MicroTrailer}" />
+                        <TextBlock Text="{DynamicResource LOCExtra_Metadata_Loader_MenuItemSectionMicrovideos}" Foreground="{DynamicResource TextBrush}" />
+                        <TextBlock Text=" (EMT)" Foreground="{DynamicResource TextBrush}" />
                     </StackPanel>
                 </StackPanel>
             </ScrollViewer>
         </GroupBox>
         <GroupBox Header="{DynamicResource LOC_DH_SourceGames}" Grid.Column="1" Margin="2,0">
-            <ListBox ItemsSource="{Binding Sources}" VirtualizingPanel.IsVirtualizing="True"
-                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox ItemsSource="{Binding Sources}" VirtualizingPanel.IsVirtualizing="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <VirtualizingStackPanel VirtualizingPanel.VirtualizationMode="Recycling"/>
+                        <VirtualizingStackPanel VirtualizingPanel.VirtualizationMode="Recycling" />
                     </ItemsPanelTemplate>
                 </ListBox.ItemsPanel>
                 <ListBox.ItemTemplate>
                     <DataTemplate DataType="{x:Type Game}">
                         <DockPanel>
-                            <TextBlock Text="{Binding ., Converter={StaticResource GameToPrioConverter}, Mode=OneWay, StringFormat='({0})'}" DockPanel.Dock="Right" Margin="5,0,0,0"/>
-                            <TextBlock Text="{Binding Source}" DockPanel.Dock="Right"/>
-                            <TextBlock Text="{Binding Name}" DockPanel.Dock="Left" TextTrimming="CharacterEllipsis"/>
+                            <TextBlock Text="{Binding ., Converter={StaticResource GameToPrioConverter}, Mode=OneWay, StringFormat='({0})'}" DockPanel.Dock="Right" Margin="5,0,0,0" />
+                            <TextBlock Text="{Binding Source}" DockPanel.Dock="Right" />
+                            <TextBlock Text="{Binding Name}" DockPanel.Dock="Left" TextTrimming="CharacterEllipsis" />
                         </DockPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
         </GroupBox>
 
-
         <DockPanel Grid.Row="1" LastChildFill="False" Margin="5" Grid.ColumnSpan="2">
-            <Separator DockPanel.Dock="Top"/>
-            <Button Content="{DynamicResource LOCCancelLabel}" DockPanel.Dock="Right" Margin="5" MinWidth="100" Command="{Binding RevertCommand}" ClickMode="Release" Click="Button_Click"/>
-            <Button Content="{DynamicResource LOCOKLabel}" DockPanel.Dock="Right" Margin="5" MinWidth="100" Command="{Binding ApplyCommand}" ClickMode="Release" Click="Button_Click"/>
+            <Separator DockPanel.Dock="Top" />
+            <Button Content="{DynamicResource LOCCancelLabel}" DockPanel.Dock="Right" Margin="5" MinWidth="100" Command="{Binding RevertCommand}" ClickMode="Release" Click="Button_Click" />
+            <Button Content="{DynamicResource LOCOKLabel}" DockPanel.Dock="Right" Margin="5" MinWidth="100" Command="{Binding ApplyCommand}" ClickMode="Release" Click="Button_Click" />
             <StackPanel Orientation="Horizontal" Margin="5" DockPanel.Dock="Left" VerticalAlignment="Center">
-                <CheckBox IsChecked="{Binding SaveAsDefault}"/>
-                <TextBlock Text="{DynamicResource LOCSaveAsDefault}" Foreground="{DynamicResource TextBrush}"/>
+                <CheckBox IsChecked="{Binding SaveAsDefault}" />
+                <TextBlock Text="{DynamicResource LOCSaveAsDefault}" Foreground="{DynamicResource TextBrush}" />
             </StackPanel>
         </DockPanel>
     </Grid>

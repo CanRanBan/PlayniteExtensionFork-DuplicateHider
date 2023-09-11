@@ -14,15 +14,15 @@
     d:DataContext="{d:DesignInstance IsDesignTimeCreatable=False, Type=DuplicateHiders:DuplicateHiderSettings}"
     >
     <UserControl.Resources>
-        <conv:GamePropertyToNameConverter x:Key="GamePropertyToNameConverter"/>
-        <conv:PropertyIdToNameConverter x:Key="PropertyIdToNameConverter"/>
+        <conv:GamePropertyToNameConverter x:Key="GamePropertyToNameConverter" />
+        <conv:PropertyIdToNameConverter x:Key="PropertyIdToNameConverter" />
     </UserControl.Resources>
     <TabControl ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
         <TabItem Header="{DynamicResource LOC_DH_CommonTab}">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel>
                     <Label VerticalAlignment="Top" Margin="12,10,12,0">
-                        <TextBlock Text="{DynamicResource LOC_DH_Priorities}"/>
+                        <TextBlock Text="{DynamicResource LOC_DH_Priorities}" />
                     </Label>
                     <ItemsControl ItemsSource="{Binding PriorityProperties}"
                                   dd:DragDrop.IsDragSource="True"
@@ -36,34 +36,33 @@
                             <ContextMenu ItemsSource="{Binding AvailablePriorityProperties}">
                                 <ContextMenu.ItemContainerStyle>
                                     <Style BasedOn="{StaticResource {x:Type MenuItem}}" TargetType="MenuItem">
-                                        <Setter Property="CommandParameter" Value="{Binding .}"/>
-                                        <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=DataContext.AddPriorityPropertyCommand}"/>
+                                        <Setter Property="CommandParameter" Value="{Binding .}" />
+                                        <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=DataContext.AddPriorityPropertyCommand}" />
                                     </Style>
                                 </ContextMenu.ItemContainerStyle>
                                 <ContextMenu.ItemTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding ., Converter={StaticResource GamePropertyToNameConverter}}"/>
+                                        <TextBlock Text="{Binding ., Converter={StaticResource GamePropertyToNameConverter}}" />
                                     </DataTemplate>
                                 </ContextMenu.ItemTemplate>
                             </ContextMenu>
                         </ItemsControl.ContextMenu>
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <StackPanel Orientation="Vertical"></StackPanel>
+                                <StackPanel Orientation="Vertical">
+                                </StackPanel>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate DataType="{x:Type models:PriorityProperty}">
                                 <DockPanel Background="Transparent">
-                                    <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}" Background="Transparent" VerticalAlignment="Center"
-                                               Cursor="Hand" Margin="3,0"
-                                              />
+                                    <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}" Background="Transparent" VerticalAlignment="Center" Cursor="Hand" Margin="3,0" />
                                     <Button DockPanel.Dock="Right" Margin="1" Padding="0" Background="Transparent"
                                             CommandParameter="{Binding .}"
                                             Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=DataContext.RemovePriorityPropertyCommand}">
-                                        <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}" Foreground="{DynamicResource WarningBrush}"/>
+                                        <TextBlock Text="" FontFamily="{DynamicResource FontIcoFont}" Foreground="{DynamicResource WarningBrush}" />
                                     </Button>
-                                    <views:PriorityPropertyView Margin="1" IsHitTestVisible="True"/>
+                                    <views:PriorityPropertyView Margin="1" IsHitTestVisible="True" />
                                 </DockPanel>
                                 <!--<TextBlock Text="{Binding PropertyName}"/>-->
                             </DataTemplate>
@@ -81,13 +80,13 @@
                                 <ContextMenu ItemsSource="{Binding AvailablePriorityProperties}">
                                     <ContextMenu.ItemContainerStyle>
                                         <Style BasedOn="{StaticResource {x:Type MenuItem}}" TargetType="MenuItem">
-                                            <Setter Property="CommandParameter" Value="{Binding .}"/>
-                                            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=DataContext.AddPriorityPropertyCommand}"/>
+                                            <Setter Property="CommandParameter" Value="{Binding .}" />
+                                            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=DataContext.AddPriorityPropertyCommand}" />
                                         </Style>
                                     </ContextMenu.ItemContainerStyle>
                                     <ContextMenu.ItemTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding ., Converter={StaticResource GamePropertyToNameConverter}}"/>
+                                            <TextBlock Text="{Binding ., Converter={StaticResource GamePropertyToNameConverter}}" />
                                         </DataTemplate>
                                     </ContextMenu.ItemTemplate>
                                 </ContextMenu>
@@ -96,18 +95,18 @@
                     </Grid>
                     <Grid Margin="12,4,12,4">
                         <Grid.RowDefinitions>
-                            <RowDefinition/>
+                            <RowDefinition />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0" Grid.Row="0" Margin="12,10,6,0" Visibility="Collapsed">
                             <Label Margin="0" VerticalAlignment="Top">
-                                <TextBlock Text="{DynamicResource LOC_DH_Priorities}"/>
+                                <TextBlock Text="{DynamicResource LOC_DH_Priorities}" />
                             </Label>
-                            <ListBox x:Name="PriorityListBox" Margin="0,5,0,0" MaxHeight="400" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
+                            <ListBox x:Name="PriorityListBox" Margin="0,5,0,0" MaxHeight="400" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" />
                         </StackPanel>
                         <StackPanel VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" Margin="6,10,15,0">
                             <CheckBox x:Name="AutoUpdateCheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0"
@@ -121,45 +120,52 @@
                             <CheckBox Visibility="Collapsed" x:Name="PrioritizeNewerGame" Margin="0,5,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" VerticalAlignment="Center"
                                       ToolTip="{DynamicResource LOC_DH_PrioritizeNewerGamesTooltip}">
                                 <TextBlock TextWrapping="Wrap" MaxWidth="{Binding ElementName=IgnoreListBox,Path=ActualWidth}"
-                                           Text="{DynamicResource LOC_DH_PrioritizeNewerGames}"/>
+                                           Text="{DynamicResource LOC_DH_PrioritizeNewerGames}" />
                             </CheckBox>
-                            <Label Margin="0,10,0,0" Content="{DynamicResource LOC_DH_IncludedPlatforms}"></Label>
-                            <ComboBox x:Name="PlatformComboBox" Margin="0,10,0,0" StaysOpenOnEdit="True" IsSynchronizedWithCurrentItem="False" IsEditable="True" PreviewKeyUp="PlatformComboBox_PreviewKeyUp"  DropDownClosed="PlatformComboBox_DropDownClosed" IsTextSearchEnabled="False"/>
-                            <Label Margin="0,10,0,0" Content="{DynamicResource LOC_DH_ExcludedSources}"></Label>
-                            <ComboBox x:Name="SourceComboBox" Margin="0,10,0,0" StaysOpenOnEdit="True" IsSynchronizedWithCurrentItem="False" IsEditable="True" PreviewKeyUp="SourceComboBox_PreviewKeyUp" DropDownClosed="SourceComboBox_DropDownClosed"  IsTextSearchEnabled="False"/>
-                            <Label Margin="0,10,0,0" Content="{DynamicResource LOC_DH_ExcludedCategories}"></Label>
-                            <ComboBox x:Name="CategoriesComboBox" Margin="0,10,0,0" StaysOpenOnEdit="True" IsSynchronizedWithCurrentItem="False" IsEditable="True" PreviewKeyUp="CategoriesComboBox_PreviewKeyUp" DropDownClosed="CategoriesComboBox_DropDownClosed" IsTextSearchEnabled="False"/>
+                            <Label Margin="0,10,0,0" Content="{DynamicResource LOC_DH_IncludedPlatforms}">
+                            </Label>
+                            <ComboBox x:Name="PlatformComboBox" Margin="0,10,0,0" StaysOpenOnEdit="True" IsSynchronizedWithCurrentItem="False" IsEditable="True" PreviewKeyUp="PlatformComboBox_PreviewKeyUp"  DropDownClosed="PlatformComboBox_DropDownClosed" IsTextSearchEnabled="False" />
+                            <Label Margin="0,10,0,0" Content="{DynamicResource LOC_DH_ExcludedSources}">
+                            </Label>
+                            <ComboBox x:Name="SourceComboBox" Margin="0,10,0,0" StaysOpenOnEdit="True" IsSynchronizedWithCurrentItem="False" IsEditable="True" PreviewKeyUp="SourceComboBox_PreviewKeyUp" DropDownClosed="SourceComboBox_DropDownClosed"  IsTextSearchEnabled="False" />
+                            <Label Margin="0,10,0,0" Content="{DynamicResource LOC_DH_ExcludedCategories}">
+                            </Label>
+                            <ComboBox x:Name="CategoriesComboBox" Margin="0,10,0,0" StaysOpenOnEdit="True" IsSynchronizedWithCurrentItem="False" IsEditable="True" PreviewKeyUp="CategoriesComboBox_PreviewKeyUp" DropDownClosed="CategoriesComboBox_DropDownClosed" IsTextSearchEnabled="False" />
                         </StackPanel>
                         <StackPanel Grid.Column="2" Grid.Row="0" Margin="15,10,12,0" ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                            <Label Margin="0" Content="{DynamicResource LOC_DH_IgnoredGames}"></Label>
+                            <Label Margin="0" Content="{DynamicResource LOC_DH_IgnoredGames}">
+                            </Label>
                             <CheckBox x:Name="AddHiddenToIgnoreList" Margin="0,5,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" VerticalAlignment="Center"
                                       ToolTip="{DynamicResource LOC_DH_IgnoreManuallyHiddenGamesTooltip}">
-                                <TextBlock TextWrapping="Wrap" MaxWidth="{Binding ElementName=IgnoreListBox,Path=ActualWidth}" Text="{DynamicResource LOC_DH_IgnoreManuallyHiddenGames}"></TextBlock>
+                                <TextBlock TextWrapping="Wrap" MaxWidth="{Binding ElementName=IgnoreListBox,Path=ActualWidth}" Text="{DynamicResource LOC_DH_IgnoreManuallyHiddenGames}">
+                                </TextBlock>
                             </CheckBox>
-                            <ListBox x:Name="IgnoreListBox" MaxHeight="400" SelectionMode="Extended" Margin="0,5,0,0"/>
+                            <ListBox x:Name="IgnoreListBox" MaxHeight="400" SelectionMode="Extended" Margin="0,5,0,0" />
                         </StackPanel>
                     </Grid>
-                    <Label Margin="10,10,0,0" Content="{DynamicResource LOC_DH_DisplayString}"></Label>
-                    <TextBox Margin="10,5,10,0" TextWrapping="Wrap" x:Name="DisplayStringTextBox" ToolTip="{DynamicResource LOC_DH_DisplayStringTooltip}"/>
+                    <Label Margin="10,10,0,0" Content="{DynamicResource LOC_DH_DisplayString}">
+                    </Label>
+                    <TextBox Margin="10,5,10,0" TextWrapping="Wrap" x:Name="DisplayStringTextBox" ToolTip="{DynamicResource LOC_DH_DisplayStringTooltip}" />
                 </StackPanel>
             </ScrollViewer>
         </TabItem>
         <TabItem Header="{DynamicResource LOC_DH_CustomRulesTab}">
             <ScrollViewer>
                 <StackPanel>
-                    <TextBlock Margin="10" TextWrapping="Wrap" Text="{DynamicResource LOC_DH_CustomRulesHeader}"></TextBlock>
-                    <ListBox KeyDown="ReplacementRulesListBox_KeyDown" PreviewMouseWheel="HandlePreviewMouseWheel" Margin="10,5,10,0" x:Name="ReplacementRulesListBox" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionMode="Extended"/>
+                    <TextBlock Margin="10" TextWrapping="Wrap" Text="{DynamicResource LOC_DH_CustomRulesHeader}">
+                    </TextBlock>
+                    <ListBox KeyDown="ReplacementRulesListBox_KeyDown" PreviewMouseWheel="HandlePreviewMouseWheel" Margin="10,5,10,0" x:Name="ReplacementRulesListBox" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionMode="Extended" />
                 </StackPanel>
             </ScrollViewer>
         </TabItem>
         <TabItem Header="{DynamicResource LOC_DH_UIIntegrationTab}">
             <StackPanel>
-                <Button x:Name="OpenUserIconFolderButton" Content="{DynamicResource LOC_DH_OpenUserIconFolderButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
-                <CheckBox x:Name="UiIntegrationCheckBox" Content="{DynamicResource LOC_DH_EnableUIIntegration}" Margin="10,5,0,0" ToolTip="{DynamicResource LOC_DH_EnableUIIntegrationTooltip}"/>
-                <CheckBox x:Name="EnableThemeIconsChechBox" Content="{DynamicResource LOC_DH_EnableThemeIcons}" Margin="10,5,0,0" ToolTip="{DynamicResource LOC_DH_EnableThemeIconsTooltip}"/>
-                <CheckBox x:Name="PreferUserIconsCheckBox" Content="{DynamicResource LOC_DH_PreferUserIcons}" Margin="10,5,0,0" ToolTip="{DynamicResource LOC_DH_PreferUserIconsTooltip}"/>
-                <CheckBox x:Name="ShowSingleSourceIconCheckBox" Content="{DynamicResource LOC_DH_ShowSingleIcon}" Margin="10,5,0,0" ToolTip="{DynamicResource LOC_DH_ShowSingleIconTooltip}"/>
-                <CheckBox x:Name="SuppressNotificationCheckBox" Content="{DynamicResource LOC_DH_SuppressNotification}" Margin="10,5,0,10" ToolTip="{DynamicResource LOC_DH_SuppressNotificationTooltip}"/>
+                <Button x:Name="OpenUserIconFolderButton" Content="{DynamicResource LOC_DH_OpenUserIconFolderButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" />
+                <CheckBox x:Name="UiIntegrationCheckBox" Content="{DynamicResource LOC_DH_EnableUIIntegration}" Margin="10,5,0,0" ToolTip="{DynamicResource LOC_DH_EnableUIIntegrationTooltip}" />
+                <CheckBox x:Name="EnableThemeIconsChechBox" Content="{DynamicResource LOC_DH_EnableThemeIcons}" Margin="10,5,0,0" ToolTip="{DynamicResource LOC_DH_EnableThemeIconsTooltip}" />
+                <CheckBox x:Name="PreferUserIconsCheckBox" Content="{DynamicResource LOC_DH_PreferUserIcons}" Margin="10,5,0,0" ToolTip="{DynamicResource LOC_DH_PreferUserIconsTooltip}" />
+                <CheckBox x:Name="ShowSingleSourceIconCheckBox" Content="{DynamicResource LOC_DH_ShowSingleIcon}" Margin="10,5,0,0" ToolTip="{DynamicResource LOC_DH_ShowSingleIconTooltip}" />
+                <CheckBox x:Name="SuppressNotificationCheckBox" Content="{DynamicResource LOC_DH_SuppressNotification}" Margin="10,5,0,10" ToolTip="{DynamicResource LOC_DH_SuppressNotificationTooltip}" />
             </StackPanel>
         </TabItem>
         <TabItem Header="{DynamicResource LOC_DH_CustomGroups}">
@@ -167,54 +173,53 @@
                 <StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="{DynamicResource LOCNameLabel}"/>
-                            <Label Content=": "/>
+                            <Label Content="{DynamicResource LOCNameLabel}" />
+                            <Label Content=": " />
                         </StackPanel>
-                        <TextBox x:Name="NewGroupNameBox" MinWidth="150"/>
+                        <TextBox x:Name="NewGroupNameBox" MinWidth="150" />
                         <Button Content="{DynamicResource LOCAddTitle}"
                                 Height="{Binding ElementName=NewGroupNameBox, Path=ActualHeight}"
                                 Padding="10,0"
                                 VerticalContentAlignment="Center"
                                 x:Name="AddGroupButton"
                                 Click="AddGroupButton_Click"
-                                Margin="10,0,0,0"/>
+                                Margin="10,0,0,0" />
                     </StackPanel>
-                    <views:CustomGroupList x:Name="GroupsList"/>
+                    <views:CustomGroupList x:Name="GroupsList" />
                 </StackPanel>
             </ScrollViewer>
         </TabItem>
         <TabItem Header="{DynamicResource LOCTagsLabel}">
             <DockPanel>
-                <TextBlock Text="{DynamicResource LOC_DH_PriorityTagsDescription}" Margin="10" DockPanel.Dock="Top"/>
+                <TextBlock Text="{DynamicResource LOC_DH_PriorityTagsDescription}" Margin="10" DockPanel.Dock="Top" />
                 <UniformGrid DockPanel.Dock="Bottom" Rows="1" Margin="5,10">
                     <StackPanel Margin="5,0">
-                        <ToggleButton Padding="3" Content="{DynamicResource LOC_DH_PriorityAddHighTag}" x:Name="AddHighTagsToggle" Margin="0,0,0,5"/>
+                        <ToggleButton Padding="3" Content="{DynamicResource LOC_DH_PriorityAddHighTag}" x:Name="AddHighTagsToggle" Margin="0,0,0,5" />
                         <Popup Style="{StaticResource {x:Type Popup}}"
-                                   IsOpen="{Binding IsChecked, ElementName=AddHighTagsToggle, Mode=TwoWay, Delay=100}"
-
-                           VerticalOffset="2"
-                           x:Name="AddHighTagsPopup" StaysOpen="False" Placement="Bottom"
-                           PlacementTarget="{Binding ElementName=AddHighTagsToggle}">
+                               IsOpen="{Binding IsChecked, ElementName=AddHighTagsToggle, Mode=TwoWay, Delay=100}"
+                               VerticalOffset="2"
+                               x:Name="AddHighTagsPopup" StaysOpen="False" Placement="Bottom"
+                               PlacementTarget="{Binding ElementName=AddHighTagsToggle}">
                             <Border MinWidth="{Binding ActualWidth, ElementName=AddHighTagsToggle}"
                                     Margin="15"
                                     Background="{DynamicResource PopupBackgroundBrush}"
                                     CornerRadius="{DynamicResource ControlCornerRadius}">
                                 <Border.Effect>
-                                    <DropShadowEffect BlurRadius="15" ShadowDepth="0" Opacity="0.75"/>
+                                    <DropShadowEffect BlurRadius="15" ShadowDepth="0" Opacity="0.75" />
                                 </Border.Effect>
-                                <views:AddTagView DataContext="{Binding AddHighPrioTagViewModel}"/>
+                                <views:AddTagView DataContext="{Binding AddHighPrioTagViewModel}" />
                             </Border>
                         </Popup>
                         <ListBox ItemsSource="{Binding HighPriorityTags}" MaxHeight="150" SelectionMode="Extended">
                             <ListBox.CommandBindings>
-                                <CommandBinding Command="Delete" Executed="CommandBinding_Executed" CanExecute="CommandBinding_CanExecute"/>
+                                <CommandBinding Command="Delete" Executed="CommandBinding_Executed" CanExecute="CommandBinding_CanExecute" />
                             </ListBox.CommandBindings>
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Converter={StaticResource PropertyIdToNameConverter}, ConverterParameter=TagIds}">
                                         <TextBlock.ContextMenu>
                                             <ContextMenu>
-                                                <MenuItem Command="Delete" CommandParameter="{Binding}"/>
+                                                <MenuItem Command="Delete" CommandParameter="{Binding}" />
                                             </ContextMenu>
                                         </TextBlock.ContextMenu>
                                     </TextBlock>
@@ -223,29 +228,29 @@
                         </ListBox>
                     </StackPanel>
                     <StackPanel Margin="5,0">
-                        <ToggleButton Padding="3" Content="{DynamicResource LOC_DH_PriorityAddLowTag}" x:Name="AddLowTagsToggle" Margin="0,0,0,5"/>
+                        <ToggleButton Padding="3" Content="{DynamicResource LOC_DH_PriorityAddLowTag}" x:Name="AddLowTagsToggle" Margin="0,0,0,5" />
                         <Popup Style="{StaticResource {x:Type Popup}}"
-                                   IsOpen="{Binding IsChecked, ElementName=AddLowTagsToggle, Mode=TwoWay, Delay=100}"
-                           x:Name="AddLowTagsPopup" StaysOpen="False" Placement="Bottom"
-                           PlacementTarget="{Binding ElementName=AddLowTagsToggle}" VerticalOffset="2">
+                               IsOpen="{Binding IsChecked, ElementName=AddLowTagsToggle, Mode=TwoWay, Delay=100}"
+                               x:Name="AddLowTagsPopup" StaysOpen="False" Placement="Bottom"
+                               PlacementTarget="{Binding ElementName=AddLowTagsToggle}" VerticalOffset="2">
 
                             <Border MinWidth="{Binding ActualWidth, ElementName=AddLowTagsToggle}" Margin="15" Background="{DynamicResource PopupBackgroundBrush}" CornerRadius="{DynamicResource ControlCornerRadius}">
                                 <Border.Effect>
-                                    <DropShadowEffect BlurRadius="15" ShadowDepth="0" Opacity="0.75"/>
+                                    <DropShadowEffect BlurRadius="15" ShadowDepth="0" Opacity="0.75" />
                                 </Border.Effect>
-                                <views:AddTagView DataContext="{Binding AddLowPrioTagViewModel}"/>
+                                <views:AddTagView DataContext="{Binding AddLowPrioTagViewModel}" />
                             </Border>
                         </Popup>
                         <ListBox ItemsSource="{Binding LowPriorityTags}" MaxHeight="150" SelectionMode="Extended">
                             <ListBox.CommandBindings>
-                                <CommandBinding Command="Delete" Executed="CommandBinding_Executed" CanExecute="CommandBinding_CanExecute"/>
+                                <CommandBinding Command="Delete" Executed="CommandBinding_Executed" CanExecute="CommandBinding_CanExecute" />
                             </ListBox.CommandBindings>
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Converter={StaticResource PropertyIdToNameConverter}, ConverterParameter=TagIds}">
                                         <TextBlock.ContextMenu>
                                             <ContextMenu>
-                                                <MenuItem Command="Delete" CommandParameter="{Binding}"/>
+                                                <MenuItem Command="Delete" CommandParameter="{Binding}" />
                                             </ContextMenu>
                                         </TextBlock.ContextMenu>
                                     </TextBlock>

@@ -12,9 +12,9 @@
     d:DataContext="{d:DesignInstance IsDesignTimeCreatable=False, Type=models:PriorityProperty}"
     >
     <UserControl.Resources>
-        <conv:PropertyIdToNameConverter x:Key="PropertyIdToNameConverter"/>
-        <conv:GamePropertyToNameConverter x:Key="GamePropertyToNameConverter"/>
-        <conv:EnumToStringConverter x:Key="EnumToStringConverter"/>
+        <conv:PropertyIdToNameConverter x:Key="PropertyIdToNameConverter" />
+        <conv:GamePropertyToNameConverter x:Key="GamePropertyToNameConverter" />
+        <conv:EnumToStringConverter x:Key="EnumToStringConverter" />
     </UserControl.Resources>
     <Grid>
         <StackPanel Orientation="Vertical">
@@ -22,17 +22,17 @@
                 <Expander.Header>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="NameColumn"/>
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="OptionsColumn"/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="NameColumn" />
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="OptionsColumn" />
+                            <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding PropertyName, Converter={StaticResource GamePropertyToNameConverter}}" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding PropertyName, Converter={StaticResource GamePropertyToNameConverter}}" VerticalAlignment="Center" />
                         <ToggleButton IsChecked="{Binding IsAscending}"
                                       Content="{Binding Direction, Converter={StaticResource EnumToStringConverter}}"
                                       Visibility="{Binding IsComparable, Converter={StaticResource BooleanToVisibilityConverter}}"
                                       Grid.Column="1" Margin="5,0,0,0"
                                       Padding="4,2"
-                                      Cursor="Hand"/>
+                                      Cursor="Hand" />
                     </Grid>
                 </Expander.Header>
                 <ListBox ItemsSource="{Binding PriorityObjects}"
@@ -47,8 +47,8 @@
                             <TextBlock>
                                 <TextBlock.Text>
                                     <MultiBinding Converter="{StaticResource PropertyIdToNameConverter}">
-                                        <Binding Path="."/>
-                                        <Binding Path="DataContext" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=StackPanel}"/>
+                                        <Binding Path="." />
+                                        <Binding Path="DataContext" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=StackPanel}" />
                                     </MultiBinding>
                                 </TextBlock.Text>
                             </TextBlock>

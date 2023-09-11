@@ -30,28 +30,28 @@
                     <GridViewColumn Width="Auto">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding Icon}" MaxHeight="16" RenderOptions.BitmapScalingMode="Fant"/>
+                                <Image Source="{Binding Icon}" MaxHeight="16" RenderOptions.BitmapScalingMode="Fant" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="Auto" Header="Library">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding LibrarySource.Name}"/>
+                                <TextBlock Text="{Binding LibrarySource.Name}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="Auto" Header="Games">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding GamesTotal}"/>
+                                <TextBlock Text="{Binding GamesTotal}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="Auto" Header="Duplicates">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding HiddenDuplicates}"/>
+                                <TextBlock Text="{Binding HiddenDuplicates}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

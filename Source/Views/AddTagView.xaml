@@ -11,16 +11,15 @@
     >
     <DockPanel Margin="5,0">
         <DockPanel DockPanel.Dock="Top" Margin="0,3">
-            <TextBlock DockPanel.Dock="Right" Margin="5" Text="&#xED11;" FontFamily="{DynamicResource FontIcoFont}" VerticalAlignment="Center" IsHitTestVisible="False"/>
-            <TextBox Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                     DockPanel.Dock="Left"/>
+            <TextBlock DockPanel.Dock="Right" Margin="5" Text="&#xED11;" FontFamily="{DynamicResource FontIcoFont}" VerticalAlignment="Center" IsHitTestVisible="False" />
+            <TextBox Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" DockPanel.Dock="Left" />
         </DockPanel>
         <Button Content="{DynamicResource LOCAddTitle}" Command="{Binding AddTagsCommand}" CommandParameter="{Binding SelectedItems, ElementName=TagListBox}"
-                DockPanel.Dock="Bottom" Margin="0,3"/>
+                DockPanel.Dock="Bottom" Margin="0,3" />
         <ListBox Margin="0,3" ItemsSource="{Binding AvailableTagsView}" DockPanel.Dock="Top" x:Name="TagListBox" SelectionMode="Extended" MaxHeight="150">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Name}"/>
+                    <TextBlock Text="{Binding Name}" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
