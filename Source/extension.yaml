@@ -1,7 +1,7 @@
-﻿Id: felixkmh_DuplicateHider_Plugin
+﻿Id: felixkmh_Generic_DuplicateHider
 Name: Duplicate Hider
 Author: felixkmh
-Version: 3.14.5
+Version: 3.14.6
 Module: DuplicateHider.dll
 Type: GenericPlugin
 Icon: icon.png

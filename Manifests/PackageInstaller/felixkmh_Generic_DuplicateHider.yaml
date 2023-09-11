@@ -1,4 +1,4 @@
-AddonId: felixkmh_DuplicateHider_Plugin
+AddonId: felixkmh_Generic_DuplicateHider
 Packages:
   - Version: 3.14.5
     RequiredApiVersion: 6.2.0
