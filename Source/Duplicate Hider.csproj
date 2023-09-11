@@ -42,12 +42,6 @@
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="QuickSearchSDK">
-      <HintPath>..\..\QuickSearch\source\bin\$(Configuration)\QuickSearchSDK.dll</HintPath>
-    </Reference>
-    <Reference Include="QuickSearchSDK.Attributes">
-      <HintPath>..\..\QuickSearch\source\bin\$(Configuration)\QuickSearchSDK.Attributes.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -216,6 +210,16 @@
     <PackageReference Include="StartPage.SDK">
       <Version>1.0.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Include\QuickSearch\source\QuickSearchSDK.Attributes\QuickSearchSDK.Attributes.csproj">
+      <Project>{d4892f70-05c7-4de2-8e4a-36f3bd82d168}</Project>
+      <Name>QuickSearchSDK.Attributes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Include\QuickSearch\source\QuickSearchSDK\QuickSearchSDK.csproj">
+      <Project>{0425a0c6-c410-48fc-8218-6f7b124eeca5}</Project>
+      <Name>QuickSearchSDK</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="('$(Configuration)' == 'ReleasePack') AND ('$(Playnite_Toolbox_Dir)' != '') AND ('$(Playnite_Toolbox_TargetDir)' != '')">
