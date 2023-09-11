@@ -6,9 +6,13 @@ Module: DuplicateHider.dll
 Type: GenericPlugin
 Icon: icon.png
 Links:
-  - Name: GitHub
+  - Name: GitHub (Source code)
     Url: https://github.com/felixkmh/DuplicateHider
-  - Name: Support (Playnite Discord)
+  - Name: Playnite Discord (#extensions-support)
     Url: https://discord.com/channels/365863063296933888/808419165311467630
-  - Name: Contribute Translations
+  - Name: Issues (Feature requests and Bugs)
+    Url: https://github.com/felixkmh/DuplicateHider/issues
+  - Name: Crowdin (Contribute Translations)
     Url: https://crowdin.com/project/duplicatehider
+  - Name: Ko-fi (Tips and Donations)
+    Url: https://ko-fi.com/felixkmh
