@@ -1,0 +1,4 @@
+[submodule "Include/QuickSearch"]
+	path = Include/QuickSearch
+	url = https://github.com/CanRanBan/PlayniteExtensionFork-QuickSearch.git
+	branch = LocalBuild
