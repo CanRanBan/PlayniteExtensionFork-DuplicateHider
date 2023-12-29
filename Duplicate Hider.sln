@@ -14,6 +14,7 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 		ReleasePack|Any CPU = ReleasePack|Any CPU
+		ReleaseUpgrade|Any CPU = ReleaseUpgrade|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{4FDF1E89-5BC3-4C72-8FDA-0D580E7A5D5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -22,18 +23,24 @@ Global
 		{4FDF1E89-5BC3-4C72-8FDA-0D580E7A5D5F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4FDF1E89-5BC3-4C72-8FDA-0D580E7A5D5F}.ReleasePack|Any CPU.ActiveCfg = ReleasePack|Any CPU
 		{4FDF1E89-5BC3-4C72-8FDA-0D580E7A5D5F}.ReleasePack|Any CPU.Build.0 = ReleasePack|Any CPU
+		{4FDF1E89-5BC3-4C72-8FDA-0D580E7A5D5F}.ReleaseUpgrade|Any CPU.ActiveCfg = ReleaseUpgrade|Any CPU
+		{4FDF1E89-5BC3-4C72-8FDA-0D580E7A5D5F}.ReleaseUpgrade|Any CPU.Build.0 = ReleaseUpgrade|Any CPU
 		{0425A0C6-C410-48FC-8218-6F7B124EECA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0425A0C6-C410-48FC-8218-6F7B124EECA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0425A0C6-C410-48FC-8218-6F7B124EECA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0425A0C6-C410-48FC-8218-6F7B124EECA5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0425A0C6-C410-48FC-8218-6F7B124EECA5}.ReleasePack|Any CPU.ActiveCfg = Release|Any CPU
 		{0425A0C6-C410-48FC-8218-6F7B124EECA5}.ReleasePack|Any CPU.Build.0 = Release|Any CPU
+		{0425A0C6-C410-48FC-8218-6F7B124EECA5}.ReleaseUpgrade|Any CPU.ActiveCfg = ReleaseUpgrade|Any CPU
+		{0425A0C6-C410-48FC-8218-6F7B124EECA5}.ReleaseUpgrade|Any CPU.Build.0 = ReleaseUpgrade|Any CPU
 		{D4892F70-05C7-4DE2-8E4A-36F3BD82D168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D4892F70-05C7-4DE2-8E4A-36F3BD82D168}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4892F70-05C7-4DE2-8E4A-36F3BD82D168}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4892F70-05C7-4DE2-8E4A-36F3BD82D168}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D4892F70-05C7-4DE2-8E4A-36F3BD82D168}.ReleasePack|Any CPU.ActiveCfg = Release|Any CPU
 		{D4892F70-05C7-4DE2-8E4A-36F3BD82D168}.ReleasePack|Any CPU.Build.0 = Release|Any CPU
+		{D4892F70-05C7-4DE2-8E4A-36F3BD82D168}.ReleaseUpgrade|Any CPU.ActiveCfg = ReleaseUpgrade|Any CPU
+		{D4892F70-05C7-4DE2-8E4A-36F3BD82D168}.ReleaseUpgrade|Any CPU.Build.0 = ReleaseUpgrade|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
