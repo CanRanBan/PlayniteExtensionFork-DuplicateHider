@@ -186,7 +186,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <None Include="icon.png">
+    <None Include="Resources\DuplicateHiderIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
