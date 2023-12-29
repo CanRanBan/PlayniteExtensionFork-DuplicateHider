@@ -9,7 +9,6 @@ using Playnite.SDK;
 using Playnite.SDK.Events;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
-using QuickSearch.SearchItems;
 using StartPage.SDK;
 using System;
 using System.Collections.Generic;
@@ -389,47 +388,6 @@ namespace DuplicateHider
             }
 
             UpdateGuidToCopiesDict();
-
-            // QuickSearch support
-            try
-            {
-                QuickSearch.QuickSearchSDK.AddCommand(new DuplicateHiderItem()
-                {
-                    Actions = new List<ISearchAction<string>>()
-                    {
-                    new QuickSearch.SearchItems.CommandAction() {Name = "Hide", Action = () =>
-                    {
-                        PlayniteApi.Database.Games.ItemUpdated -= Games_ItemUpdated;
-                        PlayniteApi.Database.Games.ItemCollectionChanged -= Games_ItemCollectionChanged;
-                        BuildIndex(PlayniteApi.Database.Games, GetGameFilter(), GetNameFilter());
-                        var hidden = SetDuplicateState(Hidden);
-                        PlayniteApi.Database.Games.Update(hidden);
-                        PlayniteApi.Dialogs.ShowMessage($"{hidden.Where(g => g.Hidden).Count()} games have been hidden.", "DuplicateHider");
-                        PlayniteApi.Database.Games.ItemUpdated += Games_ItemUpdated;
-                        PlayniteApi.Database.Games.ItemCollectionChanged += Games_ItemCollectionChanged;
-                    }
-                },
-                new QuickSearch.SearchItems.CommandAction() {Name = "Reveal", Action = () =>
-                    {
-                        PlayniteApi.Database.Games.ItemUpdated -= Games_ItemUpdated;
-                        PlayniteApi.Database.Games.ItemCollectionChanged -= Games_ItemCollectionChanged;
-                        BuildIndex(PlayniteApi.Database.Games, GetGameFilter(), GetNameFilter());
-                        var revealed = SetDuplicateState(Visible);
-                        PlayniteApi.Database.Games.Update(revealed);
-                        PlayniteApi.Dialogs.ShowMessage($"{revealed.Where(g => !g.Hidden).Count()} games have been revealed.", "DuplicateHider");
-                        PlayniteApi.Database.Games.ItemUpdated += Games_ItemUpdated;
-                        PlayniteApi.Database.Games.ItemCollectionChanged += Games_ItemCollectionChanged;
-                    }
-                }
-            }
-                });
-
-
-            }
-            catch (Exception)
-            {
-
-            }
         }
 
         private void LocalizeTags()
@@ -450,35 +408,6 @@ namespace DuplicateHider
             {
                 highTag.Name = ResourceProvider.GetString("LOC_DH_HighPrioTag");
             }
-        }
-
-        private class DuplicateHiderItem : ISearchItem<string>
-        {
-            public IList<QuickSearch.SearchItems.ISearchKey<string>> Keys => new List<QuickSearch.SearchItems.ISearchKey<string>>
-            {
-                new QuickSearch.SearchItems.CommandItemKey() { Key = TopLeft, Weight = 1},
-                new QuickSearch.SearchItems.CommandItemKey() { Key = BottomLeft, Weight = 1}
-            };
-
-            public IList<QuickSearch.SearchItems.ISearchAction<string>> Actions { get; set; }
-
-            public QuickSearch.SearchItems.ScoreMode ScoreMode => QuickSearch.SearchItems.ScoreMode.WeightedMaxScore;
-
-            public Uri Icon => null;
-
-            public string TopLeft => "Duplicates";
-
-            public string TopRight => null;
-
-            public string BottomLeft => "Hide or reveal duplicate copies";
-
-            public string BottomCenter => null;
-
-            public string BottomRight => Instance.Index.Values.Sum(v => v.Count() - 1).ToString() + " duplicates found";
-
-            public char? IconChar => '';
-
-            public FrameworkElement DetailsView => null;
         }
 
         private void IconWatcher_Changed(object sender, FileSystemEventArgs e)
