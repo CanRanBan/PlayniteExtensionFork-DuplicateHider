@@ -224,16 +224,6 @@
       <HintPath>$(Playnite_Extensions_Dir)\felixkmh_StartPage_Plugin\StartPage.SDK.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Include\QuickSearch\source\QuickSearchSDK.Attributes\QuickSearchSDK.Attributes.csproj">
-      <Project>{d4892f70-05c7-4de2-8e4a-36f3bd82d168}</Project>
-      <Name>QuickSearchSDK.Attributes</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Include\QuickSearch\source\QuickSearchSDK\QuickSearchSDK.csproj">
-      <Project>{0425a0c6-c410-48fc-8218-6f7b124eeca5}</Project>
-      <Name>QuickSearchSDK</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="PostBuildPack" AfterTargets="PostBuildEvent" Condition="('$(Configuration)' == 'ReleasePack') AND ('$(Playnite_Toolbox_Dir)' != '') AND ('$(Playnite_Toolbox_TargetDir)' != '')">
     <Exec Command="%22$(Playnite_Toolbox_Dir)\Toolbox.exe%22 pack %22$(TargetDir.TrimEnd('\'))%22 %22$(Playnite_Toolbox_TargetDir)%22" />
