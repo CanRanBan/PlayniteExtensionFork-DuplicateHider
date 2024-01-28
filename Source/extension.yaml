@@ -1,4 +1,4 @@
-﻿Id: felixkmh_Generic_DuplicateHider
+Id: felixkmh_Generic_DuplicateHider
 Name: Duplicate Hider
 Author: felixkmh
 Version: 3.14.6
@@ -7,12 +7,10 @@ Type: GenericPlugin
 Icon: Resources\DuplicateHiderIcon.ico
 Links:
   - Name: GitHub (Source code)
-    Url: https://github.com/felixkmh/DuplicateHider
+    Url: https://github.com/CanRanBan/PlayniteExtensionFork-DuplicateHider
+  - Name: Wiki (Introduction and Help)
+    Url: https://github.com/CanRanBan/PlayniteExtensionFork-DuplicateHider/wiki
   - Name: Playnite Discord (#extensions-support)
     Url: https://discord.com/channels/365863063296933888/808419165311467630
   - Name: Issues (Feature requests and Bugs)
-    Url: https://github.com/felixkmh/DuplicateHider/issues
-  - Name: Crowdin (Contribute Translations)
-    Url: https://crowdin.com/project/duplicatehider
-  - Name: Ko-fi (Tips and Donations)
-    Url: https://ko-fi.com/felixkmh
+    Url: https://github.com/CanRanBan/PlayniteExtensionFork-DuplicateHider/issues
