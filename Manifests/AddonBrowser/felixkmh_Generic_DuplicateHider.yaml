@@ -1,14 +1,15 @@
 AddonId: felixkmh_Generic_DuplicateHider
 Type: Generic
-IconUrl: https://raw.githubusercontent.com/felixkmh/DuplicateHider/master/source/icon.png
+IconUrl: https://raw.githubusercontent.com/CanRanBan/PlayniteExtensionFork-DuplicateHider/main/Source/Resources/DuplicateHiderIcon.ico
 Name: Duplicate Hider
-ShortDescription: Hides duplicate game copies based on customizable priorities. Supports custom UI elements.
+ShortDescription: Hides duplicate copies of the same game based on customizable priorities. Offers custom user interface elements.
 Author: felixkmh
-SourceUrl: https://github.com/felixkmh/DuplicateHider
+SourceUrl: https://github.com/CanRanBan/PlayniteExtensionFork-DuplicateHider
 Links:
-    GitHub: https://github.com/felixkmh/DuplicateHider
-    Support (Playnite Discord): https://discord.com/channels/365863063296933888/808419165311467630
-    Contribute Translations: https://crowdin.com/project/duplicatehider
-InstallerManifestUrl: https://raw.githubusercontent.com/felixkmh/DuplicateHider/master/InstallerManifest/felixkmh_DuplicateHider_Plugin.yaml
-Description: Duplicate Hider tries to hide all but one copy of the same game, based on the name of the game. This is useful if you own the same game on different platforms, like Steam and GOG, for example. In order to determine which copy stays visible, you can set up a priority list. An entry to that list could be installation status, sources, libraries and more. If two games are the same based on a priority property, the next one is checked and so on. Hiding duplicates can be done automatically (if the "Update Rank Automatically" option is enabled), or manually using the "Hide Duplicates" and "Reveal Duplicates" menu functions. Also, DuplicateHider provides custom UI elements for themes that support them. The UI elements allow easy access to the hidden duplicates of your games.
-Tags: ["felixkmh", "Duplicate", "Hide", "Copy", "Group", "Merge", "Combine", "Join", "Connect", "Link", "Customize", "Priority"]
+    GitHub (Source code): https://github.com/CanRanBan/PlayniteExtensionFork-DuplicateHider
+    Wiki (Introduction and Help): https://github.com/CanRanBan/PlayniteExtensionFork-DuplicateHider/wiki
+    Playnite Discord (#extensions-support): https://discord.com/channels/365863063296933888/808419165311467630
+    Issues (Feature requests and Bugs): https://github.com/CanRanBan/PlayniteExtensionFork-DuplicateHider/issues
+InstallerManifestUrl: https://raw.githubusercontent.com/CanRanBan/PlayniteExtensionFork-DuplicateHider/main/Manifests/PackageInstaller/felixkmh_Generic_DuplicateHider.yaml
+Description: The "Duplicate Hider" Playnite extension hides duplicate copies of the same game based on customizable priorities. By default games with the same name are treated as duplicates. Creating custom groups or advanced features like regular expressions allow to keep different names while treating them as duplicates. Select game details can be copied to duplicates. Various fields being part of game details like source, library, installation status, platform and many more can be used for the prioritization. Higher priorities are checked first and lower priorities are only used if there's still no distinct order. Both manual and automatic hiding of duplicates is possible. The extension offers custom user interface elements for usage in themes that allow easy access to duplicates.
+Tags: ["felixkmh", "Duplicate", "Hide", "Copy", "Group", "Merge", "Combine", "Link", "Customize", "Priority"]
