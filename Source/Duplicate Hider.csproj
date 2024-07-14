@@ -229,9 +229,9 @@
     <Exec Command="%22$(Playnite_Toolbox_Dir)\Toolbox.exe%22 pack %22$(TargetDir.TrimEnd('\'))%22 %22$(Playnite_Toolbox_TargetDir)%22" />
   </Target>
   <Target Name="PostBuildUpgrade" AfterTargets="PostBuildEvent" Condition="('$(Configuration)' == 'ReleaseUpgrade') AND  ('$(Playnite_Source_Dir)' != '') AND ('$(Playnite_Extensions_Dir)' != '')">
-    <Exec IgnoreExitCode="true" Command="robocopy %22$(TargetDir.TrimEnd('\'))%22 %22$(Playnite_Extensions_Dir)\felixkmh_Generic_DuplicateHider%22 /mir /copy:DAT /dcopy:DAT /xf %22Playnite.SDK.???%22 %22Newtonsoft.Json.???%22 /unilog:%22$(Playnite_Source_Dir)\RoboCopy - Logs\RoboCopy - Log - ReleaseUpgrade - Duplicate Hider.txt%22">
+    <Exec IgnoreExitCode="true" Command="robocopy %22$(TargetDir.TrimEnd('\'))%22 %22$(Playnite_Extensions_Dir)\felixkmh_Generic_DuplicateHider%22 /mir /copy:DAT /dcopy:DAT /xf %22Playnite.SDK.???%22 %22Newtonsoft.Json.???%22 /unilog:%22$(Playnite_Source_Dir)\RoboCopy - Logs\RoboCopy - Log - ReleaseUpgrade - $(ProjectName).txt%22">
       <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
     </Exec>
-    <Error Condition="$(ErrorCode) > 7" Text="RoboCopy failed during copy operation of Duplicate Hider project." />
+    <Error Condition="$(ErrorCode) > 7" Text="RoboCopy failed during copy operation of $(ProjectName) project." />
   </Target>
 </Project>
