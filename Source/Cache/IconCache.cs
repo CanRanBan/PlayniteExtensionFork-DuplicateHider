@@ -123,9 +123,12 @@ namespace DuplicateHider.Cache
             var asm = Assembly.GetAssembly(typeof(DuplicateHiderPlugin));
             string resName = asm.GetName().Name + ".g.resources";
             using (var stream = asm.GetManifestResourceStream(resName))
-            using (var reader = new System.Resources.ResourceReader(stream))
             {
-                return reader.Cast<System.Collections.DictionaryEntry>().Select(entry => (string)entry.Key).ToArray();
+                using (var reader = new System.Resources.ResourceReader(stream))
+                {
+                    return reader.Cast<System.Collections.DictionaryEntry>().Select(entry => (string)entry.Key)
+                                 .ToArray();
+                }
             }
         }
 
