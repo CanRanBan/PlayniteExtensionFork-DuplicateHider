@@ -1,8 +1,8 @@
-﻿using DuplicateHider.Models;
+﻿using System.Collections.Generic;
+using System.Reflection;
+using DuplicateHider.Models;
 using Playnite.SDK;
 using Playnite.SDK.Models;
-using System.Collections.Generic;
-using System.Reflection;
 
 namespace DuplicateHider.ViewModels
 {

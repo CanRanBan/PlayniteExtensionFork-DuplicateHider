@@ -1,16 +1,4 @@
-﻿using DuplicateHider.Cache;
-using DuplicateHider.Controls;
-using DuplicateHider.Data;
-using DuplicateHider.Models;
-using DuplicateHider.ViewModels;
-using DuplicateHider.Views;
-using Newtonsoft.Json;
-using Playnite.SDK;
-using Playnite.SDK.Events;
-using Playnite.SDK.Models;
-using Playnite.SDK.Plugins;
-using StartPage.SDK;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -24,6 +12,18 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
+using DuplicateHider.Cache;
+using DuplicateHider.Controls;
+using DuplicateHider.Data;
+using DuplicateHider.Models;
+using DuplicateHider.ViewModels;
+using DuplicateHider.Views;
+using Newtonsoft.Json;
+using Playnite.SDK;
+using Playnite.SDK.Events;
+using Playnite.SDK.Models;
+using Playnite.SDK.Plugins;
+using StartPage.SDK;
 using static DuplicateHider.DuplicateHiderPlugin.Visibility;
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("DuplicateHider")]

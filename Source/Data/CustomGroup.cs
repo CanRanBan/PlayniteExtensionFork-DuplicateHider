@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using Playnite.SDK.Models;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Playnite.SDK.Models;
 
 namespace DuplicateHider.Data
 {

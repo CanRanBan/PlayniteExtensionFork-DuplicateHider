@@ -1,8 +1,8 @@
-﻿using DuplicateHider.Data;
-using Playnite.SDK.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using DuplicateHider.Data;
+using Playnite.SDK.Models;
 
 namespace DuplicateHider.Models
 {

@@ -1,8 +1,8 @@
-﻿using Playnite.SDK.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Media;
+using Playnite.SDK.Models;
 
 namespace DuplicateHider.Models
 {

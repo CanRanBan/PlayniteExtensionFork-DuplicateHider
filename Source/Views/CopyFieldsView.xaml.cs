@@ -1,6 +1,6 @@
-﻿using DuplicateHider.ViewModels;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
+using DuplicateHider.ViewModels;
 
 namespace DuplicateHider.Views
 {

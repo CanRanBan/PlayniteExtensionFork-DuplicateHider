@@ -1,8 +1,8 @@
-﻿using Playnite.SDK;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Globalization;
 using System.Windows.Data;
+using Playnite.SDK;
 
 namespace DuplicateHider.Converters
 {

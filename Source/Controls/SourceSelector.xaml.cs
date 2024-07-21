@@ -1,7 +1,4 @@
-﻿using DuplicateHider.Models;
-using Playnite.SDK;
-using Playnite.SDK.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -11,6 +8,9 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Effects;
+using DuplicateHider.Models;
+using Playnite.SDK;
+using Playnite.SDK.Models;
 
 // <ContentControl x:Name="DuplicateHider_SourceSelector" DockPanel.Dock="Right" MaxHeight="{Binding ElementName=PART_ImageIcon, Path=Height}" />
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("DuplicateHider")]

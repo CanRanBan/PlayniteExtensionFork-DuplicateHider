@@ -1,10 +1,4 @@
-﻿using DuplicateHider.Data;
-using DuplicateHider.Models;
-using DuplicateHider.ViewModels;
-using Newtonsoft.Json;
-using Playnite.SDK;
-using Playnite.SDK.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -13,6 +7,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
+using DuplicateHider.Data;
+using DuplicateHider.Models;
+using DuplicateHider.ViewModels;
+using Newtonsoft.Json;
+using Playnite.SDK;
+using Playnite.SDK.Models;
 
 namespace DuplicateHider
 {

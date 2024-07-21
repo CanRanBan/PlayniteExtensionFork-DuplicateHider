@@ -1,6 +1,6 @@
-﻿using Playnite.SDK.Models;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
+using Playnite.SDK.Models;
 
 namespace DuplicateHider.Controls
 {

@@ -1,7 +1,4 @@
-﻿using DuplicateHider.ViewModels;
-using DuplicateHider.Views;
-using Playnite.SDK.Models;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +6,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using DuplicateHider.ViewModels;
+using DuplicateHider.Views;
+using Playnite.SDK.Models;
 
 namespace DuplicateHider
 {
