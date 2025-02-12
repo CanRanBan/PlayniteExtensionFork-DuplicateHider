@@ -1,4 +1,4 @@
-﻿namespace DuplicateHider.Windows
+namespace DuplicateHider.Windows
 {
     class PreviewData
     {

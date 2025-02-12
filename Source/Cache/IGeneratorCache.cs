@@ -1,4 +1,4 @@
-﻿namespace DuplicateHider.Cache
+namespace DuplicateHider.Cache
 {
     interface IGeneratorCache<TItem, TArg>
     {
